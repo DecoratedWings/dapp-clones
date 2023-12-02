@@ -1,0 +1,221 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f6f4;
+    color: #000; /* Dark black text for light mode */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #eeeeee;
+    color: black; /* Black text color for light theme header */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+footer {
+    background-color: #eeeeee;
+    color: black; /* Black text color for light theme footer */
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 50px auto; /* Centering the main content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currency-pair {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.currency-select {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 15px; /* Spacing between the currency selectors */
+}
+
+.currency-select input[type="number"], 
+.currency-select button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    background-color: #dfdfdf; /* Darker background for buttons in dark mode */
+    color: #000; /* Lighter text color for buttons in dark mode */
+}
+
+button {
+    background-color: #cecece;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+button#exchangeButton {
+    width: 100%;
+    font-size: 1.1em;
+    display: inline-block; /* Make the button an inline block element */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+button#swapButton {
+    background: none;
+    color:#000;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0 20px;
+}
+
+button#themeToggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.currency-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.currency-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+.currency-list li:hover {
+    background-color: #ddd;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f4f4f4; /* Lighter text color for better contrast in dark mode */
+}
+
+body.dark-theme header, 
+body.dark-theme footer {
+    background-color: #343a40;
+    color: #f4f4f4; /* Light text color for dark theme header and footer */
+}
+
+
+body.dark-theme .modal-content {
+    background-color: #343a40;
+}
+
+body.dark-theme .currency-list li {
+    background-color: #343a40;
+    color: #f4f4f4;
+}
+
+body.dark-theme .currency-list li:hover {
+    background-color: #454d55;
+}
+
+body.dark-theme button {
+    background-color: #4a4a4a; /* Darker background for buttons in dark mode */
+    color: #f4f4f4; /* Lighter text color for buttons in dark mode */
+}
+
+body.dark-theme button#swapButton {
+    color: #f4f4f4; /* Lighter color for swap button text in dark mode */
+}
+body.dark-theme button#exchangeButton {
+    color: #f4f4f4; /* Lighter color for swap button text in dark mode */
+}
+
+/* Footer Links */
+footer nav a {
+    color: inherit; /* Footer link colors match the footer text color */
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 80%;
+    }
+
+    .currency-select input[type="number"], 
+    .currency-select button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    header button {
+        margin: 0 10px;
+    }
+}
