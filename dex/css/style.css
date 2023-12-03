@@ -129,6 +129,7 @@ button {
 button#exchangeButton {
     width: 100%;
     font-size: 1.1em;
+    text-align: center;
 }
 
 button#swapButton {
@@ -136,6 +137,14 @@ button#swapButton {
     margin-left: 65px;
     padding: 10px;
     align-items: center;
+}
+
+#currencySearchBox {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
 }
 
 /* Modal Background */

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   const currencies = [
     "Bitcoin (BTC)",
     "Ethereum (ETH)",
@@ -12,9 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   currencies.forEach((currency) => {
     let li = document.createElement("li");
+    li.tabIndex = 0;
     li.textContent = currency;
     li.onclick = function () {
       selectCurrency(currency);
+    };
+    li.onkeydown = function (event) {
+      if (event.key === "Enter") {
+        selectCurrency(currency);
+      }
     };
     currencyList.appendChild(li);
   });
@@ -32,12 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("currencyModal").style.display = "block";
   };
 
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' ) {
+      closeModal();
+    }
+});
+
   document.querySelector(".close").onclick = function () {
-    document.getElementById("currencyModal").style.display = "none";
+    closeModal();
   };
 
   document.querySelector(".close-secondary").onclick = function () {
-    document.getElementById("currencyModal").style.display = "none";
+    closeModal();
   };
 
   function selectCurrency(currency) {
@@ -48,21 +59,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Theme Toggle Functionality
-  const themeToggle = document.getElementById("themeToggle");
-  const themeToggleDesktop = document.getElementById("themeToggleDesktop");
+  function toggleTheme() {
+    const isDarkTheme = document.body.classList.toggle("dark-theme");
+    updateThemeIcon("themeIcon", isDarkTheme);
+    updateThemeIcon("themeIconDesktop", isDarkTheme);
+  }
 
-  themeToggle.onclick = function () {
-    const themeIcon = document.getElementById("themeIcon");
-    const isDarkTheme = document.body.classList.toggle("dark-theme");
-    themeIcon.textContent = isDarkTheme ? "🌙" : "☀️";
-    themeIcon.className = isDarkTheme ? "moon-icon" : "sun-icon";
-  };
-  themeToggleDesktop.onclick = function () {
-    const themeIcon = document.getElementById("themeIconDesktop");
-    const isDarkTheme = document.body.classList.toggle("dark-theme");
-    themeIcon.textContent = isDarkTheme ? "🌙" : "☀️";
-    themeIcon.className = isDarkTheme ? "moon-icon" : "sun-icon";
-  };
+  function updateThemeIcon(iconId, isDarkTheme) {
+    const themeIcon = document.getElementById(iconId);
+    if (themeIcon) {
+      themeIcon.textContent = isDarkTheme ? "🌙" : "☀️";
+      themeIcon.className = isDarkTheme ? "moon-icon" : "sun-icon";
+    }
+  }
+
+  themeToggle.onclick = toggleTheme;
+  themeToggleDesktop.onclick = toggleTheme;
 
   // Mobile Menu Functionality
   window.toggleMobileMenu = function () {
@@ -71,6 +83,22 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.style.display = "none";
     } else {
       menu.style.display = "block";
+    }
+  };
+
+  window.filterCurrencies = function () {
+    var input = document.getElementById("currencySearchBox");
+    var filter = input.value.toUpperCase();
+    var currencyList = document.getElementById("currencyList");
+    var li = currencyList.getElementsByTagName("li");
+
+    for (var i = 0; i < li.length; i++) {
+      var txtValue = li[i].textContent || li[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
     }
   };
 
@@ -95,4 +123,62 @@ document.addEventListener("DOMContentLoaded", function () {
       [fromAmount.value, toAmount.value] = [toAmount.value, fromAmount.value];
     }
   };
+
+  function getFocusableElements(element) {
+    return element.querySelectorAll(
+      'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+  }
+
+  fromCurrencyButton.onclick = function () {
+    activeButtonId = "fromCurrency";
+    openModal();
+  };
+
+  toCurrencyButton.onclick = function () {
+    activeButtonId = "toCurrency";
+    openModal();
+  };
+
+  function openModal() {
+    const modal = document.getElementById("currencyModal");
+    modal.style.display = "block";
+    trapFocus(modal);
+  }
+
+  function trapFocus(modal) {
+    const focusableElements = getFocusableElements(modal);
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement =
+      focusableElements[focusableElements.length - 1];
+
+    modal.addEventListener("keydown", function (event) {
+      const isTab = event.key === "Tab";
+
+      if (!isTab) {
+        return;
+      }
+
+      if (event.shiftKey) {
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus();
+          event.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocusableElement) {
+          firstFocusableElement.focus();
+          event.preventDefault();
+        }
+      }
+    });
+
+    firstFocusableElement.focus();
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("currencyModal");
+    modal.style.display = "none";
+    // Remove event listener for focus trapping
+    modal.removeEventListener("keydown", trapFocus);
+  }
 });

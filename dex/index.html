@@ -1,100 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessible DEX</title>
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <h1>Crypto Exchange</h1>
+        <h1>Crypto Exchange</h1>
 
-      <!-- Mobile Menu Button -->
-      <button
-        id="mobileMenuButton"
-        aria-label="Open menu"
-        onclick="toggleMobileMenu()"
-      >
-        ☰
-      </button>
-
-      <div id="mobileMenu" class="mobile-menu">
-        <button id="themeToggle" aria-label="Toggle theme">
-          <span id="themeIcon" class="sun-icon">☀️</span>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuButton" aria-label="Open menu" onclick="toggleMobileMenu()">
+            ☰
         </button>
-        <button id="connectWallet">Connect Wallet</button>
-      </div>
 
-      <!-- Header Buttons for Desktop -->
-      <div class="header-buttons">
-        <button id="themeToggleDesktop" aria-label="Toggle theme">
-          <span id="themeIconDesktop" class="sun-icon">☀️</span>
-        </button>
-        <button id="connectWalletLarge">Connect Wallet</button>
-      </div>
+        <div id="mobileMenu" class="mobile-menu">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon" class="sun-icon">☀️</span>
+            </button>
+            <button id="connectWallet">Connect Wallet</button>
+        </div>
+
+        <!-- Header Buttons for Desktop -->
+        <div class="header-buttons">
+            <button id="themeToggleDesktop" aria-label="Toggle theme">
+                <span id="themeIconDesktop" class="sun-icon">☀️</span>
+            </button>
+            <button id="connectWalletLarge">Connect Wallet</button>
+        </div>
     </header>
 
     <main>
-      <section id="exchange">
-        <div class="currency-pair">
-            <h2>Trade Tokens</h2>
-          <div class="currency-select">
-            <p class="text-labels">Token to Trade</p>
-            <input
-              id="fromAmount"
-              aria-label="Amount to exchange from"
-              placeholder="Amount"
-            />
-            <button id="fromCurrency" aria-haspopup="true">
-              Select Currency
-            </button>
-          </div>
+        <section id="exchange">
+            <div class="currency-pair">
+                <h2>Trade Tokens</h2>
+                <div class="currency-select">
+                    <p class="text-labels">Token to Trade</p>
+                    <input id="fromAmount" aria-label="Amount to exchange from" placeholder="Amount" />
+                    <button id="fromCurrency" aria-haspopup="true">
+                        Select Currency
+                    </button>
+                </div>
 
-          <button id="swapButton" aria-label="Swap currencies">⇅</button>
+                <button id="swapButton" aria-label="Swap currencies">⇅</button>
 
-          <div class="currency-select">
-            <p>Token to Receive</p>
-            <button id="toCurrency" aria-haspopup="true">
-              Select Currency
-            </button>
-          </div>
+                <div class="currency-select">
+                    <p>Token to Receive</p>
+                    <button id="toCurrency" aria-haspopup="true">
+                        Select Currency
+                    </button>
+                </div>
+            </div>
+            <button id="exchangeButton">Exchange</button>
+        </section>
+
+        <div id="currencyModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+            <div class="modal-content">
+                <button class="close" aria-label="Close" onclick="closeModal()">
+                    ×
+                </button>
+                <h2 id="modalTitle">Select Currency</h2>
+
+                <input type="text" id="currencySearchBox" placeholder="Search for a token" oninput="filterCurrencies()">
+
+                <ul id="currencyList" class="currency-list"></ul>
+                <button class="close-secondary" aria-label="Close" onclick="closeModal()">
+                    close
+                </button>
+            </div>
         </div>
-        <button id="exchangeButton">Exchange</button>
-      </section>
-
-      <div
-        id="currencyModal"
-        class="modal"
-        aria-hidden="true"
-        role="dialog"
-        aria-labelledby="modalTitle"
-      >
-        <div class="modal-content">
-          <button class="close" aria-label="Close" onclick="closeModal()">
-            ×
-          </button>
-          <h2 id="modalTitle">Select Currency</h2>
-          <ul id="currencyList" class="currency-list"></ul>
-          <button
-            class="close-secondary"
-            aria-label="Close"
-            onclick="closeModal()"
-          >
-            close
-          </button>
-        </div>
-      </div>
     </main>
 
     <footer>
-      <p>&copy; 2023 Accessible DEX</p>
-      <nav>
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
-        <a href="#">Contact Us</a>
-      </nav>
+        <p>&copy; 2023 Accessible DEX</p>
+        <nav>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </nav>
     </footer>
 
     <script src="js/app.js"></script>
-  </body>
+</body>
+
 </html>
