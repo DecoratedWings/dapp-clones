@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Define the available currencies
-  const currencies = ["BTC", "ETH", "XRP", "LTC", "ADA"];
+
+  const currencies = [
+    "Bitcoin (BTC)",
+    "Ethereum (ETH)",
+    "Ripple (XRP)",
+    "Litecoin (LTC)",
+    "Cardano (ADA)",
+  ];
   const currencyList = document.getElementById("currencyList");
   let activeButtonId;
 
-  // Populate the modal with currency options
   currencies.forEach((currency) => {
     let li = document.createElement("li");
     li.textContent = currency;
@@ -14,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     currencyList.appendChild(li);
   });
 
-  // Assign click event to 'Select Currency' buttons
   const fromCurrencyButton = document.getElementById("fromCurrency");
   const toCurrencyButton = document.getElementById("toCurrency");
 
@@ -28,12 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("currencyModal").style.display = "block";
   };
 
-  // Close modal when the close button is clicked
   document.querySelector(".close").onclick = function () {
     document.getElementById("currencyModal").style.display = "none";
   };
 
-  // Function to handle currency selection from the modal
+  document.querySelector(".close-secondary").onclick = function () {
+    document.getElementById("currencyModal").style.display = "none";
+  };
+
   function selectCurrency(currency) {
     if (activeButtonId) {
       document.getElementById(activeButtonId).textContent = currency;
@@ -43,11 +49,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Theme Toggle Functionality
   const themeToggle = document.getElementById("themeToggle");
+  const themeToggleDesktop = document.getElementById("themeToggleDesktop");
+
   themeToggle.onclick = function () {
     const themeIcon = document.getElementById("themeIcon");
     const isDarkTheme = document.body.classList.toggle("dark-theme");
     themeIcon.textContent = isDarkTheme ? "🌙" : "☀️";
     themeIcon.className = isDarkTheme ? "moon-icon" : "sun-icon";
+  };
+  themeToggleDesktop.onclick = function () {
+    const themeIcon = document.getElementById("themeIconDesktop");
+    const isDarkTheme = document.body.classList.toggle("dark-theme");
+    themeIcon.textContent = isDarkTheme ? "🌙" : "☀️";
+    themeIcon.className = isDarkTheme ? "moon-icon" : "sun-icon";
+  };
+
+  // Mobile Menu Functionality
+  window.toggleMobileMenu = function () {
+    var menu = document.getElementById("mobileMenu");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
   };
 
   // Functionality for swap button
@@ -63,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fromCurrency.textContent,
     ];
 
-    // Swap the values of the amount inputs, if they are both numbers
+    // Swap receive and input tokens, if they are both numbers
     if (
       !isNaN(parseFloat(fromAmount.value)) &&
       !isNaN(parseFloat(toAmount.value))

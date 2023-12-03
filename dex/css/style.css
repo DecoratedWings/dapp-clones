@@ -6,16 +6,16 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f3f6f4; /* Light gray background */
-    color: #000; /* Dark text for light mode */
+    background-color: #f3f6f4; 
+    color: #000; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 header {
-    background-color: #eeeeee; /* Light gray header */
-    color: black; /* Black text color */
+    background-color: #eeeeee; 
+    color: black; 
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@ header {
 button#themeToggle, button#connectWallet {
     background: none;
     border: none;
-    color: black; /* Black text color for buttons */
+    color: black; 
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 4px;
@@ -43,7 +43,7 @@ button#themeToggle, button#connectWallet {
 }
 
 button#themeToggle {
-    font-size: 1.5rem; /* Larger icon for theme toggle */
+    font-size: 1.5rem; 
 }
 
 header h1 {
@@ -53,15 +53,15 @@ header h1 {
 }
 
 footer {
-    background-color: #eeeeee; /* Light gray footer */
-    color: black; /* Black text color */
+    background-color: #eeeeee; 
+    color: black; 
     padding: 1rem;
     text-align: center;
     margin-top: auto;
 }
 
 main {
-    padding: 100px;
+    padding: 80px;
     flex-grow: 1;
     max-width: 600px;
     margin: 0 auto;
@@ -75,15 +75,14 @@ main {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #fff; /* or any other color you prefer */
-    padding-right: 100px;
+    background-color: #fff; 
     padding-left: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
-
+    box-sizing: border-box; 
 }
 
 .currency-select {
@@ -100,11 +99,11 @@ main {
 }
 
 .currency-select p {
-    margin: 0 0 10px 0; /* Adjust spacing as needed */
+    margin: 0 0 10px 0; 
     text-align: center;
 }
 .currency-select:last-child {
-    margin-bottom: 0; /* Removes margin at the bottom of the last element */
+    margin-bottom: 0; 
 }
 
 .currency-select input[type="number"], 
@@ -114,7 +113,7 @@ main {
     border: 1px solid #ccc;
     margin-bottom: 5px;
     border-radius: 4px;
-    text-align: center; /* Center text inside input and button */
+    text-align: center; 
 }
 
 button {
@@ -160,12 +159,10 @@ button#swapButton {
     border: 1px solid #888;
     width: 40%;
     border-radius: var(--border-radius);
- 
 }
 
 /* Close Button */
 .close {
-    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -182,7 +179,6 @@ button#swapButton {
     list-style-type: none;
     padding: 0;
     border-radius: var(--border-radius);
-
 }
 
 .currency-list li {
@@ -214,6 +210,31 @@ body.dark-theme button {
     color: #f4f4f4;
 }
 
+body.dark-theme .currency-pair,
+body.dark-theme .currency-select {
+    background-color: #2c3036;
+    color: #f4f4f4;
+    border-color: #3a3f45;
+}
+
+body.dark-theme .currency-list li {
+    background-color: #3a3f45;
+    color: #f4f4f4;
+}
+
+body.dark-theme .currency-list li:hover {
+    background-color: #2c3036;
+}
+
+body.dark-theme footer nav a {
+    color: #f4f4f4;
+}
+
+body.dark-theme footer nav a:hover {
+    text-decoration: underline;
+    color: #ddd;
+}
+
 /* Footer Links */
 footer nav a {
     color: inherit;
@@ -225,18 +246,102 @@ footer nav a:hover {
     text-decoration: underline;
 }
 
+#mobileMenuButton {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: black;
+}
+
+/* Mobile menu - hidden by default */
+#mobileMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsive Styles */
+
+/* Mobile and small devices (width up to 600px) */
 @media screen and (max-width: 600px) {
-    .modal-content {
+    /* Display mobile menu button */
+    #mobileMenuButton {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    header {
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+       /* Hide larger screen buttons */
+       .header-buttons {
+        display: none;
+    }
+
+    footer {
+        padding: 0.5rem;
+        font-size: smaller;
+    }
+
+    .header-buttons {
+        right: 0.5rem;
+    }
+
+    main {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .currency-pair {
+        padding: 50px;
+        width: 100%;
+    }
+    .currency-select{
         width: 80%;
+        padding: 20px;
     }
 
     .currency-select input[type="number"], 
-    .currency-select button {
-        width: 100%;
-        margin: 5px 0;
+    .currency-select button,
+    button#swapButton {
+        font-size: 0.9em;
     }
 
-    header .header-buttons {
-        right: 10px;
+    .modal-content {
+        width: 90%;
+    }
+
+    body, button, input {
+        font-size: 16px;
+    }
+}
+
+/* Tablets and medium devices (width from 601px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    main {
+        padding: 50px;
+    }
+
+    .currency-pair, .currency-select {
+        padding: 30px;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+
+    body, button, input {
+        font-size: 18px;
     }
 }
