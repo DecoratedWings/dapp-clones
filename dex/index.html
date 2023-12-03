@@ -8,16 +8,23 @@
 </head>
 <body>
     <header>
-        <h1>Accessible Decentralized Exchange</h1>
+        <h1>Crypto Exchange</h1>
+        <div class="header-buttons">
+
         <button id="themeToggle" aria-label="Toggle theme">
             <span id="themeIcon" class="sun-icon">☀️</span>
         </button>
+        <button>Connect Wallet</button>
+
+    </div>
+
     </header>
 
     <main>
         <section id="exchange">
             <div class="currency-pair">
-                <div class="currency-select">
+                <div class="currency-select" >
+                    <p>Token to Trade</p>
                     <input id="fromAmount" aria-label="Amount to exchange from" placeholder="Amount">
                     <button id="fromCurrency" aria-haspopup="true">Select Currency</button>
                 </div>
@@ -25,7 +32,8 @@
                 <button id="swapButton" aria-label="Swap currencies">⇅</button> 
 
                 <div class="currency-select">
-                    <input  id="toAmount" aria-label="Amount to exchange to" placeholder="Amount">
+                    <p>Token to Receive</p>
+                    <!-- <input  id="toAmount" aria-label="Amount to exchange to" placeholder="Amount"> -->
                     <button id="toCurrency" aria-haspopup="true">Select Currency</button>
                 </div>
             </div>
