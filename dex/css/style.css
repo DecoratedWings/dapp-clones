@@ -267,6 +267,15 @@ body.dark-theme .modal-content {
    
 }
 
+
+body.dark-theme .token-icon {
+    background-color: white;
+}
+
+body.dark-theme .close {
+    background-color: white;
+}
+
 /* Footer Links */
 footer nav a {
     color: inherit;
