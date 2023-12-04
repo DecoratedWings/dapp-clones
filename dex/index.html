@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessible DEX</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
 <body>
@@ -13,9 +13,7 @@
         <h1>Crypto Exchange</h1>
 
         <!-- Mobile Menu Button -->
-        <button id="mobileMenuButton" aria-label="Open menu" onclick="toggleMobileMenu()">
-            ☰
-        </button>
+        <button id="mobileMenuButton" aria-label="Open menu" onclick="toggleMobileMenu()">☰</button>
 
         <div id="mobileMenu" class="mobile-menu">
             <button id="themeToggle" aria-label="Toggle theme">
@@ -40,18 +38,22 @@
                 <div class="currency-select">
                     <p class="text-labels">Token to Trade</p>
                     <input id="fromAmount" aria-label="Amount to exchange from" placeholder="Amount" />
-                    <button id="fromCurrency" aria-haspopup="true">
-                        Select Currency
-                    </button>
+                    <button id="fromCurrency" aria-haspopup="true">Select Currency</button>
+                    <div class="selected-token">
+                        <img id="selectedFromTokenIcon" class="token-icon" alt="">
+                        <span id="selectedFromTokenName"></span>
+                    </div>
                 </div>
 
                 <button id="swapButton" aria-label="Swap currencies">⇅</button>
 
                 <div class="currency-select">
                     <p>Token to Receive</p>
-                    <button id="toCurrency" aria-haspopup="true">
-                        Select Currency
-                    </button>
+                    <button id="toCurrency" aria-haspopup="true">Select Currency</button>
+                    <div class="selected-token">
+                        <img id="selectedToTokenIcon" class="token-icon" alt="">
+                        <span id="selectedToTokenName"></span>
+                    </div>
                 </div>
             </div>
             <button id="exchangeButton">Exchange</button>
@@ -59,30 +61,27 @@
 
         <div id="currencyModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
             <div class="modal-content">
-                <button class="close" aria-label="Close" onclick="closeModal()">
-                    ×
-                </button>
+                <button class="close" aria-label="Close" onclick="closeModal()">×</button>
                 <h2 id="modalTitle">Select Currency</h2>
-
-                <input type="text" id="currencySearchBox" placeholder="Search for a token" oninput="filterCurrencies()">
-
+                <label for="currencySearchBox">Search for token</label>
+                <div class="search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="search" id="currencySearchBox" aria-label="Search for tokens" oninput="filterCurrencies()" />
+                </div>
                 <ul id="currencyList" class="currency-list"></ul>
-                <button class="close-secondary" aria-label="Close" onclick="closeModal()">
-                    close
-                </button>
+                <button class="close-secondary" aria-label="Close" onclick="closeModal()">close</button>
             </div>
         </div>
+        
     </main>
 
     <footer>
         <p>&copy; 2023 Accessible DEX</p>
         <nav>
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
-            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
         </nav>
     </footer>
 
     <script src="js/app.js"></script>
 </body>
-
 </html>

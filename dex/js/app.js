@@ -6,13 +6,38 @@ document.addEventListener("DOMContentLoaded", function () {
     "Litecoin (LTC)",
     "Cardano (ADA)",
   ];
+
+  const tokenIcons = {
+    "Bitcoin (BTC)": "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=022",
+    "Ethereum (ETH)": "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=022",
+    "Ripple (XRP)": "https://cryptologos.cc/logos/xrp-xrp-logo.png?v=022",
+    "Litecoin (LTC)": "https://cryptologos.cc/logos/litecoin-ltc-logo.png?v=022",
+    "Cardano (ADA)": "https://cryptologos.cc/logos/cardano-ada-logo.png?v=022"
+};
+  
+  document.getElementById("selectedFromTokenIcon").setAttribute("hidden", true);
+  document.getElementById("selectedToTokenIcon").setAttribute("hidden", true);
+
   const currencyList = document.getElementById("currencyList");
   let activeButtonId;
 
   currencies.forEach((currency) => {
     let li = document.createElement("li");
     li.tabIndex = 0;
-    li.textContent = currency;
+
+    // Create an img element for the icon
+    let img = document.createElement("img");
+    img.src = tokenIcons[currency];
+    img.alt = currency + " icon";
+    img.className = "token-icon"; // A class for styling the icon
+
+    // Append the icon to the list item
+    li.appendChild(img);
+
+    // Create a text node and append it to the list item
+    let textNode = document.createTextNode(currency);
+    li.appendChild(textNode);
+
     li.onclick = function () {
       selectCurrency(currency);
     };
@@ -21,8 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
         selectCurrency(currency);
       }
     };
+
     currencyList.appendChild(li);
-  });
+});
 
   const fromCurrencyButton = document.getElementById("fromCurrency");
   const toCurrencyButton = document.getElementById("toCurrency");
@@ -53,10 +79,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function selectCurrency(currency) {
     if (activeButtonId) {
-      document.getElementById(activeButtonId).textContent = currency;
+        const currencyName = currency.split(" (")[0];
+        let iconId, nameId;
+
+        if (activeButtonId === 'fromCurrency') {
+            iconId = 'selectedFromTokenIcon';
+            nameId = 'selectedFromTokenName';
+        } else if (activeButtonId === 'toCurrency') {
+            iconId = 'selectedToTokenIcon';
+            nameId = 'selectedToTokenName';
+        }
+
+        if (iconId && nameId) {
+            document.getElementById(iconId).src = tokenIcons[currency];
+            document.getElementById(iconId).style.display = 'inline'; // Show the icon
+            document.getElementById(nameId).textContent = currencyName;
+        }
     }
-    document.getElementById("currencyModal").style.display = "none";
-  }
+    closeModal();
+}
+
+
 
   // Theme Toggle Functionality
   function toggleTheme() {
@@ -104,25 +147,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Functionality for swap button
   document.getElementById("swapButton").onclick = function () {
-    const fromCurrency = document.getElementById("fromCurrency");
-    const toCurrency = document.getElementById("toCurrency");
-    const fromAmount = document.getElementById("fromAmount");
-    const toAmount = document.getElementById("toAmount");
+    // Swap the selected currencies
+    [document.getElementById('selectedFromTokenName').textContent,
+     document.getElementById('selectedToTokenName').textContent] = 
+    [document.getElementById('selectedToTokenName').textContent,
+     document.getElementById('selectedFromTokenName').textContent];
 
-    // Swap the text of the currency buttons
-    [fromCurrency.textContent, toCurrency.textContent] = [
-      toCurrency.textContent,
-      fromCurrency.textContent,
-    ];
+    // Swap the icons
+    let fromIconSrc = document.getElementById('selectedFromTokenIcon').src;
+    document.getElementById('selectedFromTokenIcon').src = document.getElementById('selectedToTokenIcon').src;
+    document.getElementById('selectedToTokenIcon').src = fromIconSrc;
 
-    // Swap receive and input tokens, if they are both numbers
-    if (
-      !isNaN(parseFloat(fromAmount.value)) &&
-      !isNaN(parseFloat(toAmount.value))
-    ) {
-      [fromAmount.value, toAmount.value] = [toAmount.value, fromAmount.value];
-    }
-  };
+    // Check if icons are visible and swap their visibility
+    let fromIconDisplay = document.getElementById('selectedFromTokenIcon').style.display;
+    document.getElementById('selectedFromTokenIcon').style.display = document.getElementById('selectedToTokenIcon').style.display;
+    document.getElementById('selectedToTokenIcon').style.display = fromIconDisplay;
+};
+
 
   function getFocusableElements(element) {
     return element.querySelectorAll(

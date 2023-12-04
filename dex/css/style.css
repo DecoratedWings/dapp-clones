@@ -147,6 +147,23 @@ button#swapButton {
     border-radius: var(--border-radius);
 }
 
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+
+.search-box .fa-search {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: gray;
+}
+
+#currencySearchBox {
+    padding-left: 30px; 
+}
+
+
 /* Modal Background */
 .modal {
     display: none;
@@ -244,6 +261,12 @@ body.dark-theme footer nav a:hover {
     color: #ddd;
 }
 
+body.dark-theme .modal-content {
+    background-color: #2c3036; 
+    color: #f4f4f4; 
+   
+}
+
 /* Footer Links */
 footer nav a {
     color: inherit;
@@ -276,6 +299,23 @@ footer nav a:hover {
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
+
+.token-icon {
+    /* display: none; */
+    width: 20px;  
+    height: 20px;
+    margin-right: 10px; 
+    vertical-align: middle; 
+}
+
+.currency-icon {
+    width: 20px; 
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
 
 /* Responsive Styles */
 
