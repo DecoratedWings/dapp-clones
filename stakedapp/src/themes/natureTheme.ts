@@ -17,6 +17,10 @@ export const natureTheme = {
     section: {
       background: '#F2F3AE',
       text: "#3E4C59",
-    }
+    },
+    card: {
+      background: '#81B29A',
+      text: '#000000',
+    },
   };
   

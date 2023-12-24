@@ -16,5 +16,9 @@ export const spaceTheme = {
     section: {
       background: '#1B263B', 
       text: "#E0E1DD", 
-    }
+    },
+    card: {
+      background: '#44566f', 
+      text: '#FFFFFF', 
+    },
   };

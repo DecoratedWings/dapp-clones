@@ -14,15 +14,19 @@ const StyledNavLink = styled(Nav.Link)`
   }
   `;
 
-const StyledDropdownToggle = styled(Dropdown.Toggle)`
-  background-color: ${(props) => props.theme.colors.primary} !important;
-  border-color: ${(props) => props.theme.colors.primary} !important;
+  const StyledDropdownToggle = styled(Dropdown.Toggle)`
+  background-color: #F5F5F5 !important; // Stable gray background
+  color: #000000; // Black text for high contrast
+  border-color: #707070 !important; // Slightly darker border for depth
   font-weight: bold;
+
   &:hover, &:focus {
-    background-color: ${(props) => props.theme.colors.primary} !important;
-    border-color: ${(props) => props.theme.colors.primary} !important;
+    background-color: #C0C0C0 !important; // Slightly darker on hover/focus
+    border-color: #606060 !important;
+    color: #000000;
   }
 `;
+
 
 const StyledNavBarBrand = styled(Navbar.Brand)`
   color: ${(props) => props.theme.colors.text} !important;

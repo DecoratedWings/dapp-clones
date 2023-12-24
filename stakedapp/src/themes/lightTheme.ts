@@ -9,13 +9,17 @@ export const lightTheme = {
   },
 
   button: {
-    background: '#007BFF',
-    text: '#FFFFFF',
+    background: '#85b4ff',
+    text: '#000000',
   },
 
   section: {
     background: '#F8F9FA',
     text: "#333333",
-  }
+  },
+  card: {
+    background: '#dedede',
+    text: '#000000',
+  },
   };
   

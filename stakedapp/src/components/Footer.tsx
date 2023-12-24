@@ -1,4 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+
+const iconSize = 30;
 
 const Footer = () => {
   return (
@@ -75,23 +78,23 @@ const Footer = () => {
       <section>
         <Container>
           <Row>
-            <Col className="text-center">
-              <a href="https://www.facebook.com" className="text-reset me-2">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://www.twitter.com" className="text-reset me-2">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com" className="text-reset me-2">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com" className="text-reset me-2">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://www.github.com" className="text-reset me-2">
-                <i className="fab fa-github"></i>
-              </a>
-            </Col>
+          <Col className="text-center">
+                    <a href="https://www.facebook.com" className="text-reset me-2" aria-label="Facebook">
+                        <FaFacebookF size={iconSize} />
+                    </a>
+                    <a href="https://www.twitter.com" className="text-reset me-2" aria-label="Twitter">
+                        <FaTwitter size={iconSize} />
+                    </a>
+                    <a href="https://www.instagram.com" className="text-reset me-2" aria-label="Instagram">
+                        <FaInstagram size={iconSize} />
+                    </a>
+                    <a href="https://www.linkedin.com" className="text-reset me-2" aria-label="LinkedIn">
+                        <FaLinkedinIn size={iconSize} />
+                    </a>
+                    <a href="https://www.github.com" className="text-reset me-2" aria-label="GitHub">
+                        <FaGithub size={iconSize} />
+                    </a>
+                </Col>
           </Row>
         </Container>
       </section>

@@ -16,6 +16,10 @@ export const sunriseTheme = {
     section: {
       background: '#FFECB3', 
       text: "#5D4037", 
-    }
+    },
+    card: {
+      background: '#FFA000', 
+      text: '#000000',
+    },
   };
   

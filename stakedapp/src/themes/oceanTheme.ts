@@ -9,13 +9,17 @@ export const oceanTheme = {
     },
   
     button: {
-      background: '#406882',
-      text: '#FFFFFF',
+      background: '#96b4e4',
+      text: '#000000',
     },
   
     section: {
       background: '#6998AB',
       text: "#FFFFFF",
-    }
+    },
+    card: {
+      background: '#406882',
+      text: '#FFFFFF',
+    },
   };
   

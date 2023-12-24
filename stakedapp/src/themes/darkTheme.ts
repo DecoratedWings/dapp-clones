@@ -16,5 +16,10 @@ export const darkTheme = {
   section: {
     background: '#495057',
     text: "#FFFFFF",
-  }
+  },
+   card: {
+    background: '#000000',  // Example color
+    text: '#FFFFFF',
+  },
+  
 };
