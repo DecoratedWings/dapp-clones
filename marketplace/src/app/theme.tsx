@@ -1,5 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 
+const config = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
+};
+
 const colors = {
   brand: {
     50: '#f5f5f5',
@@ -18,6 +23,14 @@ const colors = {
 const fonts = {
   heading: 'Georgia, serif',
   body: 'Arial, sans-serif',
+};
+
+const styles = {
+  global: (props: { colorMode: string; }) => ({
+    body: {
+      bg: props.colorMode === "dark" ? "blue.700" : "white",
+    },
+  }),
 };
 
 const components = {
@@ -44,6 +57,6 @@ const components = {
   },
 };
 
-const theme = extendTheme({ colors, fonts, components });
+const theme = extendTheme({ config, colors, fonts, components, styles });
 
 export default theme;

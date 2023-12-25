@@ -27,13 +27,14 @@ import {
     return (
       <Box
         position={"relative"}
-        p={2}
-        mt={"3.5rem"}
+        p={1}
+        // mt={"3.5rem"}    
+        id="chakra-skip-nav"
       >
         {isAlertVisible && (
           <Alert status="info" borderRadius="md" display="flex" alignItems="start">
             <AlertIcon mt={2} />
-            <Box flex="1">
+            <Box flex="1" >
               <AlertTitle>{props.title}</AlertTitle>
               <AlertDescription>{props.preview}</AlertDescription>
               
@@ -45,7 +46,7 @@ import {
               </Collapse>
             </Box>
             <Box display="flex" flexDirection="row" alignItems="center">
-              <Button variant="link" colorScheme="white" onClick={toggleMoreInfo} marginRight="4">
+              <Button variant="link"  colorScheme="white" onClick={toggleMoreInfo} marginRight="4">
                 {isMoreInfoVisible ? "Less info" :  "More info"}
               </Button>
               <CloseButton

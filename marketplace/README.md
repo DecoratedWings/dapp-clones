@@ -6,12 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -19,6 +13,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+
+## Accessibility Resources for NextJS
+
+- [NextJs Shopify E-Commerce Guide](https://vercel.com/guides/building-ecommerce-sites-with-next-js-and-shopify)
+- [Shopify Accessibility Docs](https://polaris.shopify.com/foundations/accessibility)
+- [Chakra UI Guide](https://chakra-ui.com/getting-started/nextjs-pages-guide)
+- [Nextjs Accessibility Page](https://nextjs.org/docs/architecture/accessibility)
 
 ## Learn More
 
