@@ -60,10 +60,10 @@ import {
           >
             <Stack spacing="5">
               <Stack spacing="1">
-                <Heading fontSize="2xl" fontWeight="extrabold" color="white" >
+                <Heading fontSize="2xl" fontWeight="extrabold" color="white" bg={"black"} >
                   {category.name}
                 </Heading>
-                <Text fontSize="lg" fontWeight="medium" color="white">
+                <Text fontSize="lg" fontWeight="medium" color="white"bg={"black"}>
                   {category.description}
                 </Text>
               </Stack>

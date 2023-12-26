@@ -40,7 +40,7 @@ import { Login } from "./Auth/Login";
   
           <HStack spacing={8} alignItems={"center"}>
             <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
-              {["Explore", "Create", "About"].map((link) => (
+              {["Explore", "About"].map((link) => (
                 <NextLink key={link} href={`/${link.toLowerCase()}`} passHref>
                   <Link
                     px={2}

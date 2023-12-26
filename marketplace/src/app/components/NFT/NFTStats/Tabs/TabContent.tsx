@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Image, Text, VStack, HStack, Grid } from '@chakra-ui/react';
+import { Box, Image, Text, VStack, HStack, Grid, useColorMode } from '@chakra-ui/react';
 
-const TabContent = ({ collections, colorMode }: any) => {
+const TabContent = ({ collections }: any) => {
+    const { colorMode } = useColorMode();
+
   return (
     <VStack align="start" spacing={4}>
       {/* Headers */}
@@ -15,7 +17,7 @@ const TabContent = ({ collections, colorMode }: any) => {
       {/* Collection items */}
       {collections.map((collection: any) => (
         <Grid templateColumns="10% 50% 20% 20%" gap={2} w="full" bg={colorMode === "dark" ? "gray.700" : "gray.200"} p={4} borderRadius="md" key={collection.rank}>
-          <Text fontSize="lg" fontWeight="bold">{collection.rank}</Text>
+          <Text as="p" fontSize="lg" >{collection.rank}</Text>
           <HStack spacing={2}>
             <Image src={collection.imageUrl} alt={collection.alt} boxSize="40px" borderRadius="md" />
             <Text>{collection.name}</Text>

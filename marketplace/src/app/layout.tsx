@@ -4,7 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Navbar from "./components/Navbar";
 import { SkipNavLink, SkipNavContent } from "@chakra-ui/skip-nav";
-import { Box } from "@chakra-ui/react";
+import { Box   } from "@chakra-ui/react";
 import SafeHydrate from "./components/SafeHydrate";
 import Footer from "./components/Footer/Footer";
 
@@ -20,12 +20,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <Providers>
           <Box zIndex={3}>
-            <SkipNavLink color="black">Skip to content</SkipNavLink>
+            <SkipNavLink >Skip to content</SkipNavLink>
           </Box>
 
           <SafeHydrate>

@@ -12,7 +12,7 @@ const colors = {
     200: '#cfcfcf',
     300: '#b1b1b1',
     400: '#9e9e9e',
-    500: '#7e7e7e', // base color
+    500: '#32de84', 
     600: '#626262',
     700: '#515151',
     800: '#3b3b3b',
@@ -48,7 +48,7 @@ const components = {
     variants: {
       solid: (props: { colorMode: string; }) => ({
         bg: props.colorMode === 'dark' ? 'brand.600' : 'brand.500',
-        color: 'white',
+        color: props.colorMode === 'dark' ?'white': 'black',
         _hover: {
           bg: props.colorMode === 'dark' ? 'brand.700' : 'brand.600',
         },

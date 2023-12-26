@@ -51,11 +51,12 @@ export const colorFilter = {
     ],
   }
   
+//   @dev - Adjust as needed for proper routing between subpages
   export const breadcrumbData = [
     { label: 'Home', slug: '/' },
     {
       label: 'Market',
-      slug: 'market',
+      slug: '/',
     },
     {
       label: 'Book Collections',

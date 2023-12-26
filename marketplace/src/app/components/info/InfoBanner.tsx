@@ -28,7 +28,6 @@ import {
       <Box
         position={"relative"}
         p={1}
-        // mt={"3.5rem"}    
         id="chakra-skip-nav"
       >
         {isAlertVisible && (
