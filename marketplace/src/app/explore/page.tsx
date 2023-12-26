@@ -4,7 +4,7 @@ import {
   collection_preview,
   collection_title,
 } from "../components/info/InfoContent";
-import MarketDescriptionComponent from "../components/info/MarketDescriptionComponent";
+import ExploreDescriptionComponent from "../components/info/ExploreDescriptionComponent";
 import PageTitle from "../components/PageTitle";
 
 interface MarketProps {}
@@ -12,7 +12,7 @@ export default function Market(props: MarketProps) {
   return (
     <>
       <InfoBanner title={collection_title} preview={collection_preview}>
-        <MarketDescriptionComponent />
+        <ExploreDescriptionComponent />
       </InfoBanner>
       <PageTitle title="NFT Collections" />
       <MainFilter />

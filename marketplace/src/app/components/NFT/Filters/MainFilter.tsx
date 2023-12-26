@@ -1,5 +1,4 @@
 "use client";
-
 import { Box, Grid, Heading, HStack, Input, Stack, Text, useColorMode } from '@chakra-ui/react'
 import { CheckboxFilter } from './CheckboxFilter'
 import { ColorPicker } from './ColorPicker'
@@ -10,7 +9,7 @@ import { SortbySelect } from './SortBySelect'
 import { MobileFilter } from './MobileFilter'
 import { blueFilters, breadcrumbData, colorFilter, genderFilter, sizeFilter } from './_data'
 import { NFTMain } from '../NFTMain'
-import SkipFilterButton from "../../../components/SkipFilterButton"
+import SkipFilterButton from "../../SkipFilterButton"
 
 export const MainFilter = () => {
   const { colorMode } = useColorMode();

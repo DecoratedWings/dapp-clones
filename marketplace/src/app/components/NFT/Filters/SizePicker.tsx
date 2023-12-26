@@ -28,7 +28,7 @@ import {
     return (
       <FormControl {...rootProps}>
         {!hideLabel && (
-          <FormLabel fontSize="sm" fontWeight="medium">
+          <FormLabel fontSize="sm" fontWeight="bold">
             {label ?? `Size: ${selectedOption?.label}`}
           </FormLabel>
         )}

@@ -31,7 +31,7 @@ import {
   
     return (
       <Box>
-        <Container py={{ base: '2', md: '4' }}>
+        <Container py={{ base: '2', md: '4' }} maxW={'6xl'}>
           <Stack spacing={{ base: '12', md: '16' }}>
             <Stack direction="row" justify="space-between">
               <Stack spacing={{ base: '4', md: '5' }}>

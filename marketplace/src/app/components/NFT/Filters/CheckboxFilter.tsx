@@ -39,17 +39,17 @@ import {
             <Input
               placeholder="Search..."
               rounded="md"
-              focusBorderColor={mode('blue.500', 'blue.200')}
+              focusBorderColor={mode('blue.900', 'blue.100')}
               aria-label='search bar'
             />
-            <InputRightElement pointerEvents="none" color="gray.400" fontSize="lg">
+            <InputRightElement pointerEvents="none" color="gray.800" fontSize="lg">
               <FiSearch />
             </InputRightElement>
           </InputGroup>
         )}
         <CheckboxGroup {...rest}>
           {options.map((option) => (
-            <Checkbox key={option.value} value={option.value} colorScheme="blue">
+            <Checkbox key={option.value} value={option.value} colorScheme="black">
               <span>{option.label}</span>
               {option.count != null && (
                 <Box as="span" color={colorMode === "dark" ? "white" : "black"} fontSize="sm">
