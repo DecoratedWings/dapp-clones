@@ -269,11 +269,12 @@ body.dark-theme .modal-content {
 
 
 body.dark-theme .token-icon {
-    background-color: white;
+    background-color: black;
 }
 
 body.dark-theme .close {
     background-color: white;
+    color:black;
 }
 
 /* Footer Links */
@@ -324,6 +325,46 @@ footer nav a:hover {
     margin-right: 5px;
 }
 
+#exchangeModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+#exchangeModal .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 15% auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    border-radius: var(--border-radius);
+}
+
+#exchangeModal .modal-content button {
+    margin-top: 10px;
+    width: auto;
+    padding: 10px 20px;
+}
+
+#exchangeModal .modal-content p {
+    margin-top: 15px;
+}
+
+body.dark-theme #exchangeModal .modal-content {
+    background-color: #2c3036; 
+    color: #f4f4f4; 
+}
+
+body.dark-theme #exchangeModal .modal-content button {
+    background-color: #4a4a4a;
+    color: #f4f4f4;
+}
 
 
 /* Responsive Styles */
