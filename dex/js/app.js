@@ -80,6 +80,11 @@ function setupEventListeners() {
     li.addEventListener("click", () =>
       selectCurrency(currency, activeButtonId, tokenIcons),
     );
+    li.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        selectCurrency(currency, activeButtonId, tokenIcons);
+      }
+    });
     getElement("currencyList").appendChild(li);
   });
 
