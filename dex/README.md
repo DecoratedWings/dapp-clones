@@ -51,3 +51,9 @@ Reference:
 
 ### Deployed Application
 
+This application is deployed at: https://a11y-dex.netlify.app/
+
+Netifly specific deployments include a pluggable lighthouse component, an automated tool for accessibility and webapp/website performance. 
+
+- [Netifly Lighthouse Article](https://docs.netlify.com/monitor-sites/lighthouse/)
+- [Lighthouse Chrome](https://developer.chrome.com/docs/lighthouse/overview/)
