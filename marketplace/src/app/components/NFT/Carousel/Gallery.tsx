@@ -30,10 +30,10 @@ interface GalleryProps {
 export const Gallery = (props: GalleryProps) => {
   const { images, rootProps } = props;
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesPerView = useBreakpointValue({ base: 1, md: 4 }); // Display fewer images at a time for more focus
+  const slidesPerView = useBreakpointValue({ base: 1, md: 4 }); 
   const imageWidth = useBreakpointValue({
-    base: "400px", // This assumes you want 400px wide images on mobile as well. Adjust if needed.
-    md: "1500px", // 2000px / 5 = 400px for desktop view
+    base: "400px", 
+    md: "1500px", 
   });
 
   const [ref, slider] = useCarousel({

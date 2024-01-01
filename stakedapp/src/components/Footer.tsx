@@ -1,5 +1,5 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { Col,Container, Row } from "react-bootstrap";
+import { FaFacebookF, FaGithub,FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 const iconSize = 30;
 

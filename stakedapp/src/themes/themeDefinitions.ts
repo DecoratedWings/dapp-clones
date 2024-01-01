@@ -1,10 +1,11 @@
 import { DefaultTheme } from "styled-components";
-import { darkTheme } from "../themes/darkTheme";
-import { lightTheme } from "../themes/lightTheme";
-import { natureTheme } from "../themes/natureTheme";
-import { oceanTheme } from "../themes/oceanTheme";
-import { sunriseTheme } from "../themes/sunriseTheme";
-import { spaceTheme } from "../themes/spaceTheme";
+
+import { darkTheme } from "../themes/darkTheme.ts";
+import { lightTheme } from "../themes/lightTheme.ts";
+import { natureTheme } from "../themes/natureTheme.ts";
+import { oceanTheme } from "../themes/oceanTheme.ts";
+import { spaceTheme } from "../themes/spaceTheme.ts";
+import { sunriseTheme } from "../themes/sunriseTheme.ts";
 
 
 export const themeMap: { [key: string]: DefaultTheme } = {

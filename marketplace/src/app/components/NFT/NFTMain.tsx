@@ -66,7 +66,6 @@ import {
                 href="#" 
                 onClick={(e) => {
                   e.preventDefault();
-                  // handle the link action, e.g. navigation or any other action
                 }} role="group">
                   <Stack spacing="8">
                     <Box overflow="hidden">

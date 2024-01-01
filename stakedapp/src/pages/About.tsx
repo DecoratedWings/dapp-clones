@@ -1,43 +1,58 @@
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Col,Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 
+import {StyledLink } from "../components/StyledComponents.tsx";
+
 const StyledContainer = styled(Container)`
-  padding-top: 50px;
+  padding-top: 20px;
   text-align: left;
 `;
 const About: React.FC = () => {
   return (
     <>
-      <h1 style={{ textAlign: "center", paddingTop:20, paddingBottom:10}} id="main-content">
+      <h1 style={{ textAlign: "center", paddingTop:20, paddingBottom:1}} id="main-content">
         About
       </h1>
 
       <StyledContainer>
         <Row className="justify-content-center">
           <Col md={8} lg={6}>
-            <h2 style={{ textAlign: "center"}}>Committed to Inclusivity and Accessibility</h2>
+        
+
+            <h2 style={{ textAlign: "center", paddingBottom:10}}>App Instructions</h2>
+            <h3 style={{  textAlign: "center", paddingBottom:10, fontSize:20}}>Our app offers you an effortless method to potentially increase your digital assets without the need for deep technical knowledge.</h3>
+            <ul style={{ paddingBottom: 10 }}>
+
             <p style={{ paddingBottom:10}}>
+              <li><strong>Staking</strong> Think of staking as putting your digital currency to work for you. 
+              It's like earning interest in a savings account. 
+              You can 'stake' a portion of your digital assets on our platform. 
+              While they're staked, they help maintain the network, and in return, 
+              you earn rewards on them.</li>
+            </p>
+            <p style={{ paddingBottom:10}}>
+              <li><strong>Unstaking:</strong> Changed your mind? 
+              No problem! You can 'unstake' your digital assets whenever you want, 
+              bringing them back into your control with ease.
+              </li>
+            </p>
+            <p style={{ paddingBottom:10}}>
+              <li>    
+                <strong>Specify Your Investment:</strong> 
+                Enter the dollar value of the digital asset you wish to stake. 
+                After specifying the amount, you'll have the opportunity to review and 
+                confirm your selection before it is processed. </li>
+            </p>
+            </ul>
+              <h2 style={{ textAlign: "center"}}>Committed to Inclusivity and Accessibility</h2>
+            <p style={{ paddingBottom:20}}>
               Welcome to our staking dApp, a decentralized application committed
               to providing an inclusive and accessible platform for all users.
               We understand the importance of digital accessibility and have
               taken significant steps to ensure that our dApp is user-friendly
               and accommodating to people with various needs and abilities.
             </p>
-
-            <h2 style={{ textAlign: "center"}}>Accessibility Features</h2>
-            <p style={{ paddingBottom:10}}>
-              <li><strong>Screen Reader Compatibility:</strong> Our dApp is fully
-              compatible with leading screen readers, ensuring that visually
-              impaired users can navigate and interact with our platform using
-              auditory feedback.</li>
-            </p>
-            <p style={{ paddingBottom:10}}>
-              <li><strong>Keyboard Navigation:</strong> Comprehensive keyboard
-              navigation capabilities allow users who cannot use a mouse or
-              prefer keyboard controls to navigate our dApp efficiently.
-              </li>
-            </p>
-            <h2 style={{ textAlign: "center"}}>Ongoing Commitment</h2>
             <p style={{ paddingBottom:10}}>
               Accessibility is an ongoing journey. We are committed to
               continuously improving our dApp to meet and exceed accessibility
@@ -49,7 +64,7 @@ const About: React.FC = () => {
             <p>
               For any queries or suggestions related to accessibility, please
               contact us at{" "}
-              <a href="mailto:contact@example.com">contact@example.com</a>. Your
+              <StyledLink href="mailto:contact@example.com">contact@example.com</StyledLink>. Your
               feedback is invaluable in helping us serve all our users better.
             </p>
           </Col>

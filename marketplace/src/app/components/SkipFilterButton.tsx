@@ -11,18 +11,17 @@ const SkipFilterButton: React.FC<SkipFilterButtonProps> = ({ targetId, text }) =
         <Button
         as="a"
         href={`#${targetId}`}
-        opacity={0} // Initially hidden
+        opacity={0} 
         position="absolute"
         zIndex={100}
         left={0}
         top={0}
         _focus={{
-            opacity: 1, // Show when focused
-            position: 'static', // Reset the position when focused
+            opacity: 1, 
+            position: 'static', 
             boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.6)"
         }}
         variant="secondary"
-        // background="white"
     >
        {text}
     </Button>

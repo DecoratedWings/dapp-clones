@@ -21,4 +21,8 @@ export const spaceTheme = {
       background: '#44566f', 
       text: '#FFFFFF', 
     },
+    link: {
+      color: '#FFFFFF',
+      hoverColor: '#44566f', 
+    },
   };

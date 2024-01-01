@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const useFocusTrap = (show: boolean) => {
   const firstFocusableRef = useRef<HTMLElement | null>(null);
@@ -15,7 +15,7 @@ const useFocusTrap = (show: boolean) => {
         if (focusableModalElements.length > 0) {
           firstFocusableRef.current = focusableModalElements[0];
           lastFocusableRef.current = focusableModalElements[focusableModalElements.length - 1];
-          firstFocusableRef.current.focus();
+          firstFocusableRef.current?.focus();
         }
       }
     }
@@ -27,12 +27,12 @@ const useFocusTrap = (show: boolean) => {
     }
     if (e.shiftKey) {
       if (document.activeElement === firstFocusableRef.current) {
-        lastFocusableRef.current.focus();
+        lastFocusableRef.current?.focus();
         e.preventDefault();
       }
     } else {
       if (document.activeElement === lastFocusableRef.current) {
-        firstFocusableRef.current.focus();
+        firstFocusableRef.current?.focus();
         e.preventDefault();
       }
     }

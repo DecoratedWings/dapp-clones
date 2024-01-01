@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
+import { Container, Dropdown,Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { ThemeContext } from '../context/ThemeContext';
-import { themeMap } from '../themes/themeDefinitions';
 import styled from 'styled-components';
-import SkipLink from './SkipLink';
+
+import { ThemeContext } from '../context/ThemeContext.tsx';
+import { themeMap } from '../themes/themeDefinitions.ts';
+import SkipLink from './SkipLink.tsx';
 
 const StyledNavLink = styled(Nav.Link)`
   color: ${(props) => props.theme.colors.text} !important; 
@@ -42,16 +43,16 @@ const NavbarComponent: React.FC = () => {
 
   const themeDropdown = (
     <Dropdown>
-      <StyledDropdownToggle  id="theme-dropdown">
+      <StyledDropdownToggle >
         Theme
       </StyledDropdownToggle>
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => handleThemeChange('light')}>Light</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleThemeChange('dark')}>Dark</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleThemeChange('ocean')}>Ocean</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleThemeChange('nature')}>Nature</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleThemeChange('sunrise')}>Sunrise</Dropdown.Item>
-        <Dropdown.Item onClick={() => handleThemeChange('space')}>Space</Dropdown.Item>
+        <Dropdown.Item  id='light' onClick={() => handleThemeChange('light')}>Light</Dropdown.Item>
+        <Dropdown.Item id='dark' onClick={() => handleThemeChange('dark')}>Dark</Dropdown.Item>
+        <Dropdown.Item id='ocean' onClick={() => handleThemeChange('ocean')}>Ocean</Dropdown.Item>
+        <Dropdown.Item id='nature' onClick={() => handleThemeChange('nature')}>Nature</Dropdown.Item>
+        <Dropdown.Item id='sunrise' onClick={() => handleThemeChange('sunrise')}>Sunrise</Dropdown.Item>
+        <Dropdown.Item id='space' onClick={() => handleThemeChange('space')}>Space</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

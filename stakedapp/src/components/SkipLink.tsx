@@ -1,4 +1,4 @@
-import { StyledSkipLink } from "./StyledComponents";
+import { StyledSkipLink } from "./StyledComponents.tsx";
 
 
 const SkipLink = () => (

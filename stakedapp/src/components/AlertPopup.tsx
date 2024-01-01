@@ -1,5 +1,7 @@
 import Alert from 'react-bootstrap/Alert';
 
+import { StyledAlert } from './StyledComponents.tsx';
+
 export interface popupProps {
     show: boolean;
     setShow: any;
@@ -12,9 +14,9 @@ function AlertPopup(props:popupProps) {
 
   if (props.show) {
     return (
-      <Alert variant={props.variant} onClose={() => handleClose()} dismissible>
+      <StyledAlert variant={props.variant} onClose={() => handleClose()} dismissible>
         <Alert.Heading>{props.msg}</Alert.Heading>
-      </Alert>
+      </StyledAlert>
     );
   }else return (<></>);
 }

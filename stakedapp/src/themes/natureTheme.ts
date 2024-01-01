@@ -20,7 +20,11 @@ export const natureTheme = {
     },
     card: {
       background: '#81B29A',
-      text: '#000000',
+      text: '#0d0f12',
+    },
+    link: {
+      color: '#000000',
+      hoverColor: '#81B29A', 
     },
   };
   

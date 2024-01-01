@@ -21,5 +21,9 @@ export const sunriseTheme = {
       background: '#FFA000', 
       text: '#000000',
     },
+    link: {
+      color: '#000000',
+      hoverColor: '#FFA000', 
+    },
   };
   

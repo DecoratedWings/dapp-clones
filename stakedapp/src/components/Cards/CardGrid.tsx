@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import StakingCard from './StakingCard';
+import { Col,Container, Row } from 'react-bootstrap';
+
+import StakingCard from './StakingCard.tsx';
 
 interface Token {
   name: string;

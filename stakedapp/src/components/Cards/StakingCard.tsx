@@ -1,10 +1,12 @@
-import React, { useState, useContext } from "react";
+import axios from "axios"
+import React, { useContext,useState } from "react";
 import { Card, Form, InputGroup } from "react-bootstrap";
-import InfoButton from "./InfoButton";
-import axios from "axios";
-import { AlertContext } from "../../context/AlertContext";
-import { StyledCard, Button, TitleContainer } from "../StyledComponents";
-import ConfirmationModal from './ConfirmationModal'; // Adjust this import as per your file structure
+
+import { AlertContext } from "../../context/AlertContext.tsx";
+import { Button, StyledCard, TitleContainer } from "../StyledComponents.tsx";
+import ConfirmationModal from './ConfirmationModal.tsx'; 
+import InfoButton from "./InfoButton.tsx";
+
 
 interface StakingCardProps {
   tokenName: string;
@@ -17,14 +19,17 @@ const StakingCard: React.FC<StakingCardProps> = ({
   stakingStats,
   imageUrl,
 }) => {
-  const { setShow, setMsg } = useContext(AlertContext);
+  const { setShow, setMsg, setVariant } = useContext(AlertContext);
   const [amount, setAmount] = useState("");
+  const [tokenAmount, setTokenAmount] = useState("");
+
   const [showModal, setShowModal] = useState(false);
   const [actionType, setActionType] = useState<'stake' | 'unstake' | ''>('');
 
-  const handleOpenModal = (action: 'stake' | 'unstake') => {
+  const handleOpenModal = async (action: 'stake' | 'unstake') => {
     setActionType(action);
     setShowModal(true);
+    await fetchExchangeRate();
   };
 
   const handleConfirm = async () => {
@@ -37,23 +42,63 @@ const StakingCard: React.FC<StakingCardProps> = ({
   };
 
   const sendStakeRequest = async () => {
-    const results = await axios.post("/.netlify/functions/walletBackend", {
-      method: "stake",
-      amount: amount,
-    });
-    console.log(results.data);
-    setMsg("Staking Successful");
-    setShow(true);
+    try {
+      const results = await axios.post("/.netlify/functions/walletBackend", {
+        method: "stake",
+        amount: amount,
+      });
+      console.log(results.data);
+      setVariant("success")
+      setMsg("Staking Successful");
+      setShow(true);
+
+    } catch(e){
+      console.log("Error: ", e);
+      setVariant('danger')
+      setMsg("Error: Unable to Stake");
+      setShow(true);
+    }
   };
 
   const sendUnstakeRequest = async () => {
-    const results = await axios.post("/.netlify/functions/walletBackend", {
-      method: "unstake",
-      amount: amount,
-    });
-    console.log(results.data);
-    setShow(true);
+    try {
+      const results = await axios.post("/.netlify/functions/walletBackend", {
+        method: "unstake",
+        amount: amount,
+      });
+      console.log(results.data);
+    } catch(e){
+      console.log("Error: ", e);
+      setVariant('danger')
+      setMsg("Error: Unable to Unstake");
+      setShow(true);
+    }
   };
+
+const fetchExchangeRate = async () => {
+      try {
+        const tokenId = extractName(tokenName).toLowerCase();
+        console.log(tokenId)
+        const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${tokenId}&vs_currencies=usd`);
+        console.log('API Response:', response.data); 
+
+        const rate = response.data[tokenId].usd;
+        const calculatedTokenAmount = (parseFloat(amount) / rate).toFixed(6);
+        setTokenAmount(calculatedTokenAmount);
+      } catch (error) {
+        console.error("Error fetching exchange rate:", error);
+        setTokenAmount("N/A");
+      }
+  };
+
+  const extractName = (tokenName: string): string =>{
+    const match = tokenName.match(/^([^(]+)\s*\(\$[A-Z]+\)/);
+    if (match && match[1]) {
+      return match[1].trim();
+    } else {
+      throw new Error('Crypto name not found in token name');
+    }
+  }
 
   return (
     <StyledCard className="mb-4" style={{ width: "18rem" }}>
@@ -65,9 +110,10 @@ const StakingCard: React.FC<StakingCardProps> = ({
         </TitleContainer>
         <Card.Text>
           {stakingStats.map((stat, index) => (
-            <div key={index}>
+            <span key={index}>
               {stat.label}: {stat.value}
-            </div>
+              <br/>
+            </span>
           ))}
         </Card.Text>
         <div className="mb-2">Amount to Stake/Unstake</div>
@@ -94,6 +140,7 @@ const StakingCard: React.FC<StakingCardProps> = ({
         onConfirm={handleConfirm}
         tokenName={tokenName}
         amount={parseFloat(amount)}
+        tokenAmount={parseFloat(tokenAmount)}
         action={actionType}
       />
     </StyledCard>

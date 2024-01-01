@@ -21,5 +21,9 @@ export const oceanTheme = {
       background: '#406882',
       text: '#FFFFFF',
     },
+    link: {
+      color: '#FFFFFF',
+      hoverColor: '#406882', 
+    },
   };
   

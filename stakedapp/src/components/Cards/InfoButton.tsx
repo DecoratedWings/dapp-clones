@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import useFocusTrap from '../../hooks/useFocusTrap';
+
+import useFocusTrap from '../../hooks/useFocusTrap.tsx';
 
 export interface InfoProps {
   detail: string;

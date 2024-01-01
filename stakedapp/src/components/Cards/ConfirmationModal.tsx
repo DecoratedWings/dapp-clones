@@ -1,7 +1,8 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { StyledModalBody, StyledModalHeader, StyledModalFooter } from '../StyledComponents'
-import useFocusTrap from '../../hooks/useFocusTrap';
+import { Button,Modal } from 'react-bootstrap';
+
+import useFocusTrap from '../../hooks/useFocusTrap.tsx';
+import { StyledModalBody, StyledModalFooter, StyledModalHeader } from '../StyledComponents.tsx'
 
 interface ConfirmationModalProps {
   show: boolean;
@@ -9,10 +10,11 @@ interface ConfirmationModalProps {
   onConfirm: () => void;
   tokenName: string;
   amount: number;
+  tokenAmount: number;
   action: 'stake' | 'unstake'| '';
 }
 
-const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ show, onHide, onConfirm, tokenName, amount, action }) => {
+const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ show, onHide, onConfirm, tokenName, amount, tokenAmount, action }) => {
   const amountInDollars = amount; 
   const handleKeyDown = useFocusTrap(show);
 
@@ -23,7 +25,6 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ show, onHide, onC
       onKeyDown={handleKeyDown}
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      autoFocus={true}
       enforceFocus={true}
     >
       <StyledModalHeader closeButton>
@@ -33,7 +34,9 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ show, onHide, onC
       </StyledModalHeader>
       <StyledModalBody>
         <h2>{tokenName}</h2>
-        <p>Amount: ${amountInDollars.toFixed(2)}</p>
+        <p>Value: ${amountInDollars.toFixed(2)}</p>
+        <p>Amount of token:{tokenAmount.toFixed(2)}</p>
+
         <p>Are you sure you want to {action} this amount?</p>
       </StyledModalBody>
       <StyledModalFooter>

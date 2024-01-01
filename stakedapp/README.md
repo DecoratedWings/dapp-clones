@@ -1,6 +1,12 @@
 # Accessible Staking Dapp
 
 
+## Accessibility Testing 
+
+## Resources 
+- [web.dev react auditing](https://web.dev/articles/accessibility-auditing-react)
+- [coingecko price api](https://www.coingecko.com/api/documentation)
+
 ## Available Scripts
 
 In the project directory, you can run:

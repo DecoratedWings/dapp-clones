@@ -1,16 +1,17 @@
 import React, { useReducer } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavbarComponent from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { IThemeProvider, ThemeContext } from "./context/ThemeContext";
-import ThemeReducer from "./context/ThemeReducer";
-import { lightTheme } from "./themes/lightTheme";
-import GlobalStyle from "./themes/globalStyles";
-import Layout from "./components/Layout";
-import Footer from "./components/Footer";
-import { AlertProvider } from "./context/AlertContext";
+
+import Footer from "./components/Footer.tsx";
+import Layout from "./components/Layout.tsx";
+import NavbarComponent from "./components/Navbar.tsx";
+import { AlertProvider } from "./context/AlertContext.tsx";
+import { IThemeProvider, ThemeContext } from "./context/ThemeContext.tsx";
+import ThemeReducer from "./context/ThemeReducer.tsx";
+import About from "./pages/About.tsx";
+import Home from "./pages/Home.tsx";
+import GlobalStyle from "./themes/globalStyles.ts";
+import { lightTheme } from "./themes/lightTheme.ts";
 
 const App: React.FC = () => {
   const [currentTheme, setNewTheme] = useReducer(ThemeReducer, []); 

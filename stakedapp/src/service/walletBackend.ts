@@ -1,5 +1,6 @@
-import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
-import { ethers } from "ethers";
+import { Handler, HandlerContext,HandlerEvent } from "@netlify/functions";
+import { ethers, JsonRpcProvider } from "ethers";
+
 import abi from "../abi/stake.json";
 
 const handler: Handler = async (
@@ -10,16 +11,14 @@ const handler: Handler = async (
 
   const stakeContractAddress = "0xbbdf8ab081eafb5ea25745ebc1271fa9f8817671";
   const apikey = process.env.API_KEY;
-  const MNEMONIC = process.env.MNEMONIC;
+  const PRIVATE_KEY = process.env.PRIVATE_KEY as string;
   const url = `https://eth-sepolia.g.alchemy.com/v2/${apikey}`;
 
   try {
     //Sepolia Chain = 11155111
-    const provider = new ethers.providers.JsonRpcProvider(url, 11155111);
-    const wallet = ethers.Wallet.fromMnemonic(
-      MNEMONIC || "",
-      "m/44'/60'/0'/0/0"
-    );
+    const provider = new JsonRpcProvider(url, 11155111);
+    const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
+
     const signer = wallet.connect(provider);
 
     const stakeV1Contract = new ethers.Contract(

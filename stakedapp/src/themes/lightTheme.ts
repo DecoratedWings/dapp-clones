@@ -21,5 +21,9 @@ export const lightTheme = {
     background: '#dedede',
     text: '#000000',
   },
+  link: {
+    color: '#000000',
+    hoverColor: '#dedede', 
+  },
   };
   

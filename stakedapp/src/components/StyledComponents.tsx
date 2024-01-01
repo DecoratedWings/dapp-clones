@@ -1,36 +1,42 @@
+import { Alert, Card, Modal } from "react-bootstrap";
 import styled from 'styled-components';
-import { Card, Modal } from "react-bootstrap";
 
 export const StyledCard = styled(Card)`
   background-color: ${(props) => props.theme.card.background} !important;
   color: ${(props) => props.theme.card.text}!important;
-  width: 18rem;
+  width: 18rem; // Default width
   margin-bottom: 1rem;
-  display: flex;           
-  flex-direction: column;  
-  justify-content: center; 
-  align-items: center;    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .card-img-top {
-    width: 100%;           
-    max-height: 150px;    
-    object-fit: cover;    
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+  }
+
+  //Mobile
+  @media (max-width: 576px) { 
+    width: 90%; 
   }
 `;
 
+
 export const StyledModalBody = styled(Modal.Body)`
   background-color: ${(props) => props.theme.card.background} !important;
-  text-color: ${(props) => props.theme.card.text}!important;
+  color: ${(props) => props.theme.card.text} !important;
   border: none;
 `;
 export const StyledModalHeader = styled(Modal.Header)`
   background-color: ${(props) => props.theme.card.background} !important;
-  text-color: ${(props) => props.theme.card.text}!important;
+  color: ${(props) => props.theme.card.text} !important;
   border: none;
 `;
 export const StyledModalFooter = styled(Modal.Footer)`
   background-color: ${(props) => props.theme.card.background} !important;
-  text-color: ${(props) => props.theme.card.text}!important;
+  color: ${(props) => props.theme.card.text} !important;
   border: none;
 `;
 
@@ -71,9 +77,15 @@ box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 
 export const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between; // Adjust space as needed
-  margin-bottom: 1rem; // Spacing below the title
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  @media (max-width: 576px) {
+    flex-direction: column; // Stack elements vertically on smaller screens
+    align-items: start; // Align items to the start for a cleaner look
+  }
 `;
+
 
 export const StyledSkipLink = styled.a`
   position: absolute;
@@ -88,4 +100,25 @@ export const StyledSkipLink = styled.a`
     left: 10px;
     top: 10px;
   }
+`;
+
+export const StyledLink = styled.a`
+  color: ${props => props.theme.link.color};
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: border-bottom-color 0.3s, text-decoration 0.3s;
+
+  &:hover,
+  &:focus {
+    color: ${props => props.theme.link.hoverColor};
+    text-decoration: underline;
+    border-bottom-color: transparent;
+  }
+`;
+
+export const StyledAlert = styled(Alert)`
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1050; // High z-index to ensure it's above other elements
 `;
