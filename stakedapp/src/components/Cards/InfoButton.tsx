@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import useFocusTrap from '../../hooks/useFocusTrap.tsx';
+import { StyledModalBody, StyledModalFooter,StyledModalHeader } from '../StyledComponents.tsx';
 
 export interface InfoProps {
   detail: string;
@@ -26,20 +27,19 @@ function InfoButton(props: InfoProps) {
         show={showModal}
         onHide={handleClose}
         onKeyDown={handleKeyDown}
-        aria-labelledby="info-modal-title"
         centered
       >
-        <Modal.Header closeButton>
+        <StyledModalHeader closeButton>
           <Modal.Title>Token Information</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        </StyledModalHeader>
+        <StyledModalBody>
           {props.detail}
-        </Modal.Body>
-        <Modal.Footer>
+        </StyledModalBody>
+        <StyledModalFooter>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </StyledModalFooter>
       </Modal>
     </>
   );

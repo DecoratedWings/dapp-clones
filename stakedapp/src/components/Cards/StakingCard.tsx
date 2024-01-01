@@ -12,12 +12,14 @@ interface StakingCardProps {
   tokenName: string;
   stakingStats: Array<{ label: string; value: string | number }>;
   imageUrl: string;
+  about:string;
 }
 
 const StakingCard: React.FC<StakingCardProps> = ({
   tokenName,
   stakingStats,
   imageUrl,
+  about
 }) => {
   const { setShow, setMsg, setVariant } = useContext(AlertContext);
   const [amount, setAmount] = useState("");
@@ -106,7 +108,7 @@ const fetchExchangeRate = async () => {
       <Card.Body>
         <TitleContainer>
         <Card.Title>{tokenName}</Card.Title>
-        <InfoButton detail={""} />
+        <InfoButton detail={about} />
         </TitleContainer>
         <Card.Text>
           {stakingStats.map((stat, index) => (

@@ -7,6 +7,7 @@ interface Token {
   name: string;
   stats: Array<{ label: string; value: string | number }>;
   imageUrl: string;
+  about:string;
 }
 
 interface CardGridProps {
@@ -23,6 +24,7 @@ const CardGrid: React.FC<CardGridProps> = ({ tokens }) => {
               tokenName={token.name}
               stakingStats={token.stats}
               imageUrl={token.imageUrl}
+              about={token.about}
             />
           </Col>
         ))}
