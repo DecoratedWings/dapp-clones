@@ -6,27 +6,20 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App.tsx';
 import reportWebVitals from './reportWebVitals.ts';
+import reportAccessibility from './utils/a11yReport.ts';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-if (process.env.NODE_ENV !== 'production') {
-  import('react-axe').then(axe => {
-    axe.default(React, ReactDOM, 1000);
-    root.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    );
-  });
-} else {
  root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-}
+
+reportAccessibility(React);
+
 
 
 // If you want to start measuring performance in your app, pass a function

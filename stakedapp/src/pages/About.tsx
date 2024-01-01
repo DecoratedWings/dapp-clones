@@ -22,29 +22,28 @@ const About: React.FC = () => {
 
             <h2 style={{ textAlign: "center", paddingBottom:10}}>App Instructions</h2>
             <h3 style={{  textAlign: "center", paddingBottom:10, fontSize:20}}>Our app offers you an effortless method to potentially increase your digital assets without the need for deep technical knowledge.</h3>
-            <ul style={{ paddingBottom: 10 }}>
 
-            <p style={{ paddingBottom:10}}>
-              <li><strong>Staking</strong> Think of staking as putting your digital currency to work for you. 
+              <ul>
+              <li style={{ paddingBottom:10}}><strong>Staking</strong> Think of staking as putting your digital currency to work for you. 
               It's like earning interest in a savings account. 
               You can 'stake' a portion of your digital assets on our platform. 
               While they're staked, they help maintain the network, and in return, 
               you earn rewards on them.</li>
-            </p>
-            <p style={{ paddingBottom:10}}>
-              <li><strong>Unstaking:</strong> Changed your mind? 
+       
+         
+              <li style={{ paddingBottom:10}}><strong>Unstaking:</strong> Changed your mind? 
               No problem! You can 'unstake' your digital assets whenever you want, 
               bringing them back into your control with ease.
               </li>
-            </p>
-            <p style={{ paddingBottom:10}}>
-              <li>    
+         
+              <li style={{ paddingBottom:10}}>    
                 <strong>Specify Your Investment:</strong> 
                 Enter the dollar value of the digital asset you wish to stake. 
                 After specifying the amount, you'll have the opportunity to review and 
-                confirm your selection before it is processed. </li>
-            </p>
-            </ul>
+                confirm your selection before it is processed. 
+                </li>
+                </ul>
+           
               <h2 style={{ textAlign: "center"}}>Committed to Inclusivity and Accessibility</h2>
             <p style={{ paddingBottom:20}}>
               Welcome to our staking dApp, a decentralized application committed
