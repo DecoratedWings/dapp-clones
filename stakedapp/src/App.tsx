@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 import { AlertProvider } from "./context/AlertContext";
 
 const App: React.FC = () => {
-  const [currentTheme, setNewTheme] = useReducer(ThemeReducer, []); // initialTheme should be a valid theme object
+  const [currentTheme, setNewTheme] = useReducer(ThemeReducer, []); 
   const themeContextProviderValue: IThemeProvider = {
     currentTheme,
     setNewTheme,
@@ -32,8 +32,9 @@ const App: React.FC = () => {
             <Router>
               <NavbarComponent />
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/home" element={<Home/>} />
+                <Route path="/about" element={<About/>} />
               </Routes>
             </Router>
           </Layout>

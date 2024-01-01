@@ -6,6 +6,16 @@ export const StyledCard = styled(Card)`
   color: ${(props) => props.theme.card.text}!important;
   width: 18rem;
   margin-bottom: 1rem;
+  display: flex;           
+  flex-direction: column;  
+  justify-content: center; 
+  align-items: center;    
+
+  .card-img-top {
+    width: 100%;           
+    max-height: 150px;    
+    object-fit: cover;    
+  }
 `;
 
 export const StyledModalBody = styled(Modal.Body)`
@@ -55,5 +65,27 @@ box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 
 &:focus {
     outline: 3px solid #4D90FE; // Change the color to something that stands out
     outline-offset: 2px; // Add some space between the border and the outline
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // Adjust space as needed
+  margin-bottom: 1rem; // Spacing below the title
+`;
+
+export const StyledSkipLink = styled.a`
+  position: absolute;
+  left: -999px;
+  top: -999px;
+  background: #000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+
+  &:focus {
+    left: 10px;
+    top: 10px;
   }
 `;

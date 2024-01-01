@@ -9,7 +9,7 @@ export const darkTheme = {
   },
 
   button: {
-    background: '#17A2B8',
+    background: '#4f4f4f',
     text: '#FFFFFF',
   },
 
@@ -18,7 +18,7 @@ export const darkTheme = {
     text: "#FFFFFF",
   },
    card: {
-    background: '#000000',  // Example color
+    background: '#000000',  
     text: '#FFFFFF',
   },
   

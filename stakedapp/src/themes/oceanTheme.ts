@@ -2,7 +2,7 @@ export const oceanTheme = {
     themeType: 'ocean',
   
     colors: {
-      background: '#1A374D',
+      background: '#213745',
       text: '#B1D0E0',
       primary: '#406882', 
       secondary: '#6998AB', 

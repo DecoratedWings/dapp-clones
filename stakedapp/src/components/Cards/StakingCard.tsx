@@ -3,7 +3,7 @@ import { Card, Form, InputGroup } from "react-bootstrap";
 import InfoButton from "./InfoButton";
 import axios from "axios";
 import { AlertContext } from "../../context/AlertContext";
-import { StyledCard, Button } from "../StyledComponents";
+import { StyledCard, Button, TitleContainer } from "../StyledComponents";
 import ConfirmationModal from './ConfirmationModal'; // Adjust this import as per your file structure
 
 interface StakingCardProps {
@@ -59,7 +59,10 @@ const StakingCard: React.FC<StakingCardProps> = ({
     <StyledCard className="mb-4" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={imageUrl} alt={`${tokenName} logo`} />
       <Card.Body>
+        <TitleContainer>
         <Card.Title>{tokenName}</Card.Title>
+        <InfoButton detail={""} />
+        </TitleContainer>
         <Card.Text>
           {stakingStats.map((stat, index) => (
             <div key={index}>

@@ -6,11 +6,11 @@ export const natureTheme = {
       text: '#3E4C59',
       primary: '#81B29A', 
       secondary: '#F2CC8F', 
-      navbar: '#282C34', // Specific color for the navbar
+      navbar: '#282C34', 
     },
   
     button: {
-      background: '#81B29A',
+      background: '#016536',
       text: '#F4FCD9',
     },
   

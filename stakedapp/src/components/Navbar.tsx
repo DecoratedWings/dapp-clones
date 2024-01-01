@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { ThemeContext } from '../context/ThemeContext';
 import { themeMap } from '../themes/themeDefinitions';
 import styled from 'styled-components';
+import SkipLink from './SkipLink';
 
 const StyledNavLink = styled(Nav.Link)`
   color: ${(props) => props.theme.colors.text} !important; 
@@ -60,11 +61,13 @@ const NavbarComponent: React.FC = () => {
     <Navbar  style={{ borderBottom: '2px solid #dee2e6' }} expand="lg">
       <Container>
         <StyledNavBarBrand href="/">Staking Dapp</StyledNavBarBrand>
+        <SkipLink />
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav" style={{marginRight:50}}>
           <Nav className="me-auto">
-            <LinkContainer to="/" >
+            <LinkContainer to="/home" >
             <StyledNavLink>Home</StyledNavLink>
             </LinkContainer>
             <LinkContainer to="/about">

@@ -33,7 +33,7 @@ export const tokens = [
       { label: "APY", value: "12%" },
       { label: "Total Staked", value: "2,000" },
     ],
-    imageUrl: "avax.png",
+    imageUrl: "ava.png",
   },
   {
     name: "Monero ($XMR)",
@@ -42,7 +42,7 @@ export const tokens = [
       { label: "APY", value: "12%" },
       { label: "Total Staked", value: "2,000" },
     ],
-    imageUrl: "path/to/imageB.jpg",
+    imageUrl: "xmr.png",
   },
   {
     name: "Ripple ($XRP)",
@@ -51,7 +51,7 @@ export const tokens = [
       { label: "APY", value: "12%" },
       { label: "Total Staked", value: "2,000" },
     ],
-    imageUrl: "path/to/imageB.jpg",
+    imageUrl: "xrp.png",
   },
   {
     name: "Cosmos ($ATOM)",
@@ -60,7 +60,7 @@ export const tokens = [
       { label: "APY", value: "12%" },
       { label: "Total Staked", value: "2,000" },
     ],
-    imageUrl: "path/to/imageB.jpg",
+    imageUrl: "cosmos.jpg",
   },
   {
     name: "Polkadot ($DOT)",
@@ -69,6 +69,6 @@ export const tokens = [
       { label: "APY", value: "12%" },
       { label: "Total Staked", value: "2,000" },
     ],
-    imageUrl: "path/to/imageB.jpg",
+    imageUrl: "dot.jpg",
   },
 ];

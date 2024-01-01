@@ -9,8 +9,8 @@ export const spaceTheme = {
     },
   
     button: {
-      background: '#778DA9', 
-      text: '#E0E1DD', 
+      background: '#89a1be', 
+      text: '#000000', 
     },
 
     section: {

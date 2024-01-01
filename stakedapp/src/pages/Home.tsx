@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import CardGrid from "../components/Cards/CardGrid";
 import { tokens } from "../components/Cards/tokens";
 import { AlertContext } from "../context/AlertContext";
@@ -9,7 +9,7 @@ const Home = () => {
   
   return (
     <div>
-      <h1 style={{ textAlign: "center", paddingTop:10, paddingBottom:80}}>
+      <h1 id="main-content" style={{ textAlign: "center", paddingTop:10, paddingBottom:80}}>
         Staking Dapp
       </h1>
       <AlertPopup show={show} setShow={setShow} msg={msg} variant="success" />

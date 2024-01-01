@@ -9,7 +9,7 @@ export const sunriseTheme = {
     },
   
     button: {
-      background: '#FFA000', 
+      background: '#79510c', 
       text: '#FFF8E1', 
     },
   

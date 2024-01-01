@@ -10,9 +10,9 @@ const Footer = () => {
         <Container className="text-center text-md-start mt-5">
           <Row className="mt-3">
             <Col md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">
+              <p className="text-uppercase fw-bold mb-4">
                 <i className="fas fa-gem me-3"></i>Staking Dapp
-              </h6>
+              </p>
               <p>
                 This staking dapp is an example of a Web3 application that can
                 be used to stake tokens in order to increase earnings. It is
@@ -22,45 +22,45 @@ const Footer = () => {
             </Col>
 
             <Col md="2" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Site Map</h6>
+              <p className="text-uppercase fw-bold mb-4">Site Map</p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/" className="text-reset">
                   Home
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/about" className="text-reset">
                   About
                 </a>
               </p>
             </Col>
 
             <Col md="3" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p className="text-uppercase fw-bold mb-4">Useful links</p>
               <p>
-                <a href="#!" className="text-reset">
-                  WCAG
+                <a href="https://www.w3.org/TR/WCAG22/" className="text-reset">
+                  WCAG 2.2
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="https://github.com/DecoratedWings/dapp-clones" className="text-reset">
                   Github Repo
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="https://react-bootstrap.netlify.app/" className="text-reset">
                   Bootstrap Docs
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="https://hapticsdao.com/" className="text-reset">
                   Haptics DAO
                 </a>
               </p>
             </Col>
 
             <Col md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+              <p className="text-uppercase fw-bold mb-4">Contact</p>
               <p>
                 <i className="fas fa-home me-3"></i> New York, NY 10012, US
               </p>
