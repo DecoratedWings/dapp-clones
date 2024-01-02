@@ -1,5 +1,12 @@
 # Accessible Dex 
 
+Decentralized Exhanges are among the simpler interfaces for dapps. 
+Although they appear to be straightforward, they are still fraught with basic accessibility issues for users. This example features a more accessible design, with some room for suggested improvements for user experience.
+
+For a full list of accessibility features, please see the section below.
+
+| Disclaimer: This app is not production ready and is currently unaudited. |
+
 ### Running Instructions
 Using BrowserSync server, run 
 ```$ npm start`` 
