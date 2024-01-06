@@ -1,7 +1,7 @@
 import { Handler, HandlerContext,HandlerEvent } from "@netlify/functions";
 import { ethers, JsonRpcProvider } from "ethers";
 
-import abi from "../abi/stake.json";
+import abi from "../src/abi/stake.json";
 
 const handler: Handler = async (
   event: HandlerEvent,
