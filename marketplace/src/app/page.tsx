@@ -10,19 +10,17 @@ import { ShowCase } from "./components/NFT/PrimaryComponent/ShowCase";
 export default function Home() {
   return (
     <main>
-
       <InfoBanner title={nft_title} preview={nft_preview}>
         <MarketDescriptionComponent />
       </InfoBanner>
       <PageTitle title="Accessible NFT Marketplace" />
 
-        <ShowCase />
+      <ShowCase />
 
       <Ranking />
       <NFTCatCarousel />
 
       <NFTCarousel />
-
     </main>
   );
 }

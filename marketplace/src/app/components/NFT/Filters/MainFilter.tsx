@@ -5,7 +5,6 @@ import { ColorPicker } from './ColorPicker'
 import { PriceRangePicker } from './PriceRangePicker'
 import { ProductBreadcrumb } from './ProductBreadcrumb'
 import { SizePicker } from './SizePicker'
-import { SortbySelect } from './SortBySelect'
 import { MobileFilter } from './MobileFilter'
 import { blueFilters, breadcrumbData, colorFilter, genderFilter, sizeFilter } from './_data'
 import { NFTMain } from '../NFTMain'
@@ -16,7 +15,7 @@ export const MainFilter = () => {
 
   return (
   <Box px={{ base: '4', md: '8', lg: '12' }} py={{ base: '6', md: '8', lg: '12' }}>
-    <ProductBreadcrumb data={breadcrumbData} />
+    <ProductBreadcrumb data={breadcrumbData}/>
     <Box mt={{ base: '8', md: '16' }}>
       <Grid templateColumns={{ base: '1fr', md: '240px 1fr' }} gap="14">
         <Stack spacing="10" maxW="240px" display={{ base: 'none', md: 'flex' }}>

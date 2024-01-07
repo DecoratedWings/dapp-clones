@@ -1,10 +1,13 @@
 # Accessible Staking Dapp
 
-This basic dapp is designed to generally serve as a more accessible version of a staking dapp, where users can stake or unstake various tokens to earn rewards. WCAG Guidlines were followed to insure best practices such as: proper keyboard navigation, color contrasts (through all themes), skip naviagation, etc.
+This basic dapp is designed to generally serve as a more accessible version of a staking dapp, where users can stake or unstake various tokens to earn rewards. WCAG Guidlines were followed to insure best practices such as: proper keyboard navigation, color contrasts (through all themes), skip naviagation, modal focus trap, etc.
 
 For a full list of accessibility features, please see the section below.
 
 | Disclaimer: This app is not production ready and is currently unaudited. |
+
+## Accessibility Enhancements
+
 
 ## Accessibility Testing 
 
@@ -43,4 +46,52 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
+Creates a build directory with a production build of your app.
+
+### `npm run lint`
+Runs the linter to verify static code
+
+### `npm run cypress:open`
+Opens Cypress to run custom BDD tests for accessibility on the UI.
+
+## Netlify Deployment 
+
+For the backend and dapp hosting, our team is leveraging Netlify. 
+To deploy to Netlify, first install the functions module 
+```$ npm install @netlify/functions ```
+
+Create a 'functions/' directory to host your backend lambda functions. Then run 
+the following to deploy a draft URL:
+```$ netlify deploy```
+
+Once you confirm the draft URL is in order, or if you want to jump straight to the deployment, simply run:
+```$ netlify deploy --prod```
+
+References: 
+- [Netlify Functions Deployment](https://docs.netlify.com/functions/lambda-compatibility/?fn-language=ts#prepare-project)
+
+
+### Deployed Application
+This application is deployed at: a11y-stakedapp.netlify.app
+
+We have attached a wallet for testnet transactions on ethereum sepolia. 
+There is a custom, unaudited staking smart contract designed for basic staking functionality. This code is solely intended to aid in the simulation of a staking dapp. 
+
+StakingDapp Contract Deployed on sepolia here: https://sepolia.etherscan.io/address/0xbbdf8ab081eafb5ea25745ebc1271fa9f8817671#code
+
+Under the hood, the user is staking their Bad Steak BS token (custom ERC20 for simulation purposes) and receiving 1 token for every second of staking. 
+
+
+### Poor Accessibility Staking Dapp Example 
+
+We have a prior example referenced in our accessibility testing talk on our youtube channel. This dapp is an example of poor UX and important for two reasons. 
+
+1. To point out that regardless of the fact that certain react component libraries are built with some inherent accessibility, it is possible to fail to implement the compnents in an accessible way. 
+2. To bring to your attention that although only a few errors appear in the accessibility testing tools (see webaim's wave tool in our video), that many errors go undetected without manual or user testing. 
+
+User testing is imperative apart from audits and automated tooling/test suites. 
+
+- Live application: https://notsogreatux.netlify.app/
+- Repository: https://github.com/DecoratedWings/Inaccessible-Stake-Dapp/tree/master/app
+
 

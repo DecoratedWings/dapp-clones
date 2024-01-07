@@ -17,8 +17,8 @@ import {
       <Breadcrumb
         fontSize="sm"
         fontWeight="medium"
-        color={mode('gray.600', 'gray.400')}
-        separator={<Box as={HiChevronRight} color={mode('gray.400', 'gray.600')} />}
+        color={mode('gray.600', 'gray.100')}
+        separator={<Box as={HiChevronRight} color={mode('gray.600', 'gray.100')} />}
       >
         {data.map((breadcrumb, index) => (
           <BreadcrumbItem key={breadcrumb.slug} isCurrentPage={index === data.length - 1}>

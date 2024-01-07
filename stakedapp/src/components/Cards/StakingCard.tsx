@@ -3,6 +3,7 @@ import React, { useContext,useState } from "react";
 import { Card, Form, InputGroup } from "react-bootstrap";
 
 import { AlertContext } from "../../context/AlertContext.tsx";
+import { useLoading } from "../../context/LoadingContext.tsx";
 import { Button, StyledCard, TitleContainer } from "../StyledComponents.tsx";
 import ConfirmationModal from './ConfirmationModal.tsx'; 
 import InfoButton from "./InfoButton.tsx";
@@ -24,6 +25,7 @@ const StakingCard: React.FC<StakingCardProps> = ({
   const { setShow, setMsg, setVariant } = useContext(AlertContext);
   const [amount, setAmount] = useState("");
   const [tokenAmount, setTokenAmount] = useState("");
+  const { showLoading, hideLoading } = useLoading();
 
   const [showModal, setShowModal] = useState(false);
   const [actionType, setActionType] = useState<'stake' | 'unstake' | ''>('');
@@ -36,11 +38,14 @@ const StakingCard: React.FC<StakingCardProps> = ({
 
   const handleConfirm = async () => {
     setShowModal(false);
+    showLoading();
+
     if (actionType === 'stake') {
       await sendStakeRequest();
     } else if (actionType === 'unstake') {
       await sendUnstakeRequest();
-    }
+    } 
+    hideLoading();
   };
 
   const sendStakeRequest = async () => {
@@ -51,7 +56,7 @@ const StakingCard: React.FC<StakingCardProps> = ({
       });
       console.log(results.data);
       setVariant("success")
-      setMsg("Staking Successful");
+      setMsg(`Staking Successful. Staked ${amount}`);
       setShow(true);
 
     } catch(e){
@@ -69,6 +74,9 @@ const StakingCard: React.FC<StakingCardProps> = ({
         amount: amount,
       });
       console.log(results.data);
+      setVariant("success")
+      setMsg(`Unstaking Successful. Unstaked ${amount}`);
+      setShow(true);
     } catch(e){
       console.log("Error: ", e);
       setVariant('danger')

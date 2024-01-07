@@ -12,6 +12,7 @@ import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
 import GlobalStyle from "./themes/globalStyles.ts";
 import { lightTheme } from "./themes/lightTheme.ts";
+import { LoadingProvider } from "./context/LoadingContext.tsx";
 
 const App: React.FC = () => {
   const [currentTheme, setNewTheme] = useReducer(ThemeReducer, []); 
@@ -28,6 +29,7 @@ const App: React.FC = () => {
     <ThemeContext.Provider value={themeContextProviderValue}>
       <ThemeProvider theme={currentTheme.updatedTheme}>
         <AlertProvider>
+          <LoadingProvider>
           <Layout>
             <GlobalStyle />
             <Router>
@@ -40,6 +42,7 @@ const App: React.FC = () => {
             </Router>
           </Layout>
           <Footer />
+          </LoadingProvider>
         </AlertProvider>
       </ThemeProvider>
     </ThemeContext.Provider>

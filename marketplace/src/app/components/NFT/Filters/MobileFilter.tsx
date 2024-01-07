@@ -93,7 +93,7 @@ import {
   const MobileColorFilter = () => {
     return (
       <Box>
-        <Box fontWeight="semibold" mb="2">
+        <Box fontWeight="bold" mb="2">
           Color
         </Box>
         <ColorPicker rootProps={{ mt: '2' }} hideLabel {...colorFilter} />
