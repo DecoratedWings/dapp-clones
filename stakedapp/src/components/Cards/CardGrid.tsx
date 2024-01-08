@@ -19,7 +19,7 @@ const CardGrid: React.FC<CardGridProps> = ({ tokens }) => {
     <Container>
       <Row>
         {tokens.map((token, index) => (
-          <Col key={index} sm={12} md={6} lg={4} xl={3} className="mb-4">
+          <Col key={index} xs={12} sm={12} md={6} lg={4} xl={3} className="mb-4 d-flex justify-content-center">
             <StakingCard 
               tokenName={token.name}
               stakingStats={token.stats}

@@ -31,7 +31,7 @@ import { Login } from "./Auth/Login";
           <Box>
             <NextLink href="/" passHref>
               <Link>
-                <Text fontSize="xl" fontWeight="bold">
+                <Text fontSize="xl" fontWeight="bold" as="h2">
                   NFT Marketplace
                 </Text>
               </Link>

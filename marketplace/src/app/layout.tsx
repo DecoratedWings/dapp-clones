@@ -33,7 +33,9 @@ export default function RootLayout({
             <Navbar />
           </SafeHydrate>
 
+          <SkipNavContent>
           {children}
+          </SkipNavContent>
 
           <SafeHydrate>
             <Footer />

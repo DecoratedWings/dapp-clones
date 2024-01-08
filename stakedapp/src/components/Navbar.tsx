@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { ThemeContext } from '../context/ThemeContext.tsx';
 import { themeMap } from '../themes/themeDefinitions.ts';
 import SkipLink from './SkipLink.tsx';
+import LoginButton from './LoginButton.tsx';
 
 const StyledNavLink = styled(Nav.Link)`
   color: ${(props) => props.theme.colors.text} !important; 
@@ -78,14 +79,20 @@ const NavbarComponent: React.FC = () => {
             {/* Mobile view, react-bootstrap setting*/}
             <div className="d-lg-none">
               {themeDropdown}
+              <LoginButton />
+
             </div>
           </Nav>
         </Navbar.Collapse>
 
         {/* Desktop/Tablet view */}
-        <div className="d-none d-lg-block">
+        <div className="d-none d-lg-block" style={{marginRight:10}}>
           {themeDropdown}
         </div>
+        <div className="d-none d-lg-block">
+        <LoginButton />
+        </div>
+
       </Container>
     </Navbar>
   );

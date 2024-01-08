@@ -2,9 +2,9 @@ export const colorFilter = {
     defaultValue: 'black',
     options: [
       { label: 'Black', value: 'black' },
-      { label: 'Tomato', value: 'tomato' },
-      { label: 'Blueish', value: '#272458' },
-      { label: 'Beige', value: '#BFB8A5' },
+      { label: 'Blue', value: 'blue' },
+      { label: 'Green', value: 'green' },
+      { label: 'Purple', value: 'purple' },
     ],
   }
   

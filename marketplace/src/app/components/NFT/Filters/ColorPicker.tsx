@@ -3,6 +3,8 @@ import {
     FormControlProps,
     FormLabel,
     HStack,
+    useColorMode,
+    useColorModeValue,
     useRadioGroup,
     UseRadioGroupProps,
   } from '@chakra-ui/react'
@@ -27,11 +29,11 @@ import {
     return (
       <FormControl {...rootProps}>
         {!hideLabel && (
-          <FormLabel fontSize="sm" fontWeight="medium">
+          <FormLabel fontSize="sm" fontWeight="bold">
             {label ?? `Color: ${selectedOption?.label ?? '-'}`}
           </FormLabel>
         )}
-        <HStack {...getRootProps()}>
+        <HStack {...getRootProps()} bg={useColorModeValue('','white')}>
           {options.map((option) => (
             <ColorPickerOption
               key={option.label}

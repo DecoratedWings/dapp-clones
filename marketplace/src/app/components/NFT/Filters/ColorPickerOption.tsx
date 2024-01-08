@@ -8,7 +8,6 @@ import {
     useTheme,
     VisuallyHidden,
   } from '@chakra-ui/react'
-  import { isDark } from '@chakra-ui/theme-tools'
   import { FiCheck } from 'react-icons/fi'
   
   interface ColorPickerOptionProps extends UseRadioProps {
@@ -34,7 +33,7 @@ import {
         >
           <Circle size="8" bg={color}>
             {state.isChecked && (
-              <Icon as={FiCheck} color={isDark(color)(theme) ? 'white' : 'gray.900'} />
+              <Icon as={FiCheck} color={useColorModeValue('white' , 'gray.900')} />
             )}
           </Circle>
         </Circle>
