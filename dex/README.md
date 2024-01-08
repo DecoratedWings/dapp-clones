@@ -33,6 +33,10 @@ For this application we have included:
 
 in index.html, which runs against aXe core accessibility library and displays any errors in the console.
 
+Otherwise simply do: 
+```$ npm run lint```
+
+
 ## Testing
 
 Run with:

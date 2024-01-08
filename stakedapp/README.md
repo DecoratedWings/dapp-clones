@@ -8,27 +8,17 @@ For a full list of accessibility features, please see the section below.
 
 ## Accessibility Enhancements
 
+- Themeing & color contrast: The user may select different themes based on their preference. All Themes conform to 
+proper color contrast, this can be verified with any contrast tool such as wave for instance. 
+- Skip to Content: The user may skip to the main content.
+- Info: Token info button for each token that is being staked. 
+- Price in Fiat: dollars is used in our case, but the design is that user-friendly currency is used first, with the token amount calculated second. 
+- Alerting: Proper alerts for users on screenreaders. Alerts are succinct and clear, and loading screens are compliant.
+- About: Page dedicated to an explanation of the dapp. We feel banners are more effective because they can describe that specific page for multi-page apps, however we've included this example as well. 
+- Clear confirmation modal: ensure the user understands the course of action they are about to undertake. 
+- Modals contain focus traps and clear close/cancel buttons.
 
-## Accessibility Testing 
-
-There are both cypress (e2e) and jest-axe accessibility tests that can catch accessibility issues. 
-
-To run the jest tests with checks against axe-core:
-```$ npm run test ```
-
-To run the cypress tests first run the app locally:
-```$ npm run start ```
-Then 
-```$ npx cypress open ```
-
-## Resources 
-- [web.dev react auditing](https://web.dev/articles/accessibility-auditing-react)
-- [coingecko price api](https://www.coingecko.com/api/documentation)
-- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
-- [react-bootstrap](https://react-bootstrap.netlify.app/)
-- [react-bootstrap accessibility docs]()
-
-## Available Scripts
+## Running Instructions
 
 In the project directory, you can run:
 
@@ -53,6 +43,26 @@ Runs the linter to verify static code
 
 ### `npm run cypress:open`
 Opens Cypress to run custom BDD tests for accessibility on the UI.
+
+
+## Accessibility Testing 
+
+There are both cypress (e2e) and jest-axe accessibility tests that can catch accessibility issues. 
+
+To run the jest tests with checks against axe-core:
+```$ npm run test ```
+
+To run the cypress tests first run the app locally:
+```$ npm run start ```
+Then 
+```$ npx cypress open ```
+
+## Resources 
+- [web.dev react auditing](https://web.dev/articles/accessibility-auditing-react)
+- [coingecko price api](https://www.coingecko.com/api/documentation)
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+- [react-bootstrap](https://react-bootstrap.netlify.app/)
+- [react-bootstrap accessibility docs]()
 
 ## Netlify Deployment 
 

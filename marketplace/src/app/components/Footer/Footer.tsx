@@ -17,6 +17,8 @@ const Footer = () => (
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/explore">Explore</Link>
+        <Link href="mailto:research@hapticsdao.com">Contact Us</Link>
+
       </VStack>
 
       <VStack align="start">
