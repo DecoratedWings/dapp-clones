@@ -7,6 +7,7 @@ import { SkipNavLink, SkipNavContent } from "@chakra-ui/skip-nav";
 import { Box   } from "@chakra-ui/react";
 import SafeHydrate from "./components/SafeHydrate";
 import Footer from "./components/Footer/Footer";
+import React from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
 

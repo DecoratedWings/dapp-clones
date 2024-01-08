@@ -10,7 +10,8 @@ import {
     Collapse,
   } from "@chakra-ui/react";
   import { useDisclosure } from "@chakra-ui/react";
-
+  import React from 'react';
+  
   export interface InfoProps {
     title: string;
     preview: string;

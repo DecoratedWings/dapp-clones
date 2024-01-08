@@ -5,16 +5,12 @@ import {
     BoxProps,
     Flex,
     Heading,
-    HStack,
-    Icon,
     Image,
     Link,
     Skeleton,
     Stack,
     Text,
-    useColorMode,
   } from '@chakra-ui/react'
-  import { FaChevronRight } from 'react-icons/fa'
   import { Category } from './_data'
   
   interface Props {
@@ -24,7 +20,6 @@ import {
 
   export const CategoryCard = (props: Props) => {
     const { category, rootProps } = props;
-    const { colorMode } = useColorMode();
 
     return (
       <Box

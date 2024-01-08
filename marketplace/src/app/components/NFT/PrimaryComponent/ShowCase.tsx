@@ -2,14 +2,9 @@ import {
     Box,
     Flex,
     Heading,
-    HStack,
-    Icon,
-    Link,
     SimpleGrid,
     Stack,
-    useColorModeValue,
   } from '@chakra-ui/react'
-  import { FaArrowRight } from 'react-icons/fa'
   import { CategoryCard } from './CategoryCard'
   import { categories } from './_data'
   

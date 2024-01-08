@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-vars */
 "use client";
 import React, { useState } from "react";
-import { Heading, Stack, Box, Flex, useColorMode } from "@chakra-ui/react";
+import { Heading, Stack, Box, Flex } from "@chakra-ui/react";
 import { FilterTabs } from "./FilterTabs";
 
 export const Ranking = () => {
-  const { colorMode } = useColorMode();
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (

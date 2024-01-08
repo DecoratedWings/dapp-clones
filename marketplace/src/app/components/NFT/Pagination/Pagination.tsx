@@ -13,14 +13,12 @@ import {
     List,
     ListItem,
     Text,
-    useBreakpointValue,
   } from '@chakra-ui/react'
   import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
   
   export type PaginationProps = Omit<ArkPaginationProps, 'children'>
   
-  export const Pagination = (props: PaginationProps, component: any) => {
-    const isMobile = useBreakpointValue({ base: true, md: false })
+  export const Pagination = (props: PaginationProps) => {
     return (
       <ArkPagination {...props}>
         {({ pages, page }) => (
@@ -40,7 +38,10 @@ import {
               {pages.map((page, index) =>
                 page.type === 'page' ? (
                   <ListItem key={index}>
-                    <PaginationPageTrigger asChild {...page} onClick={() => props.onChange({ page: page.value })}>
+                    <PaginationPageTrigger asChild {...page} onClick={() => props.onChange?.({
+                      page: page.value,
+                      pageSize: 0
+                    })}>
                       <Button
                         variant="secondary"
                         borderRadius="full"

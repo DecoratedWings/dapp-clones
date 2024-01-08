@@ -7,8 +7,8 @@ import {
 import ExploreDescriptionComponent from "../components/info/ExploreDescriptionComponent";
 import PageTitle from "../components/PageTitle";
 
-interface MarketProps {}
-export default function Market(props: MarketProps) {
+// interface MarketProps {}
+export default function Market() {
   return (
     <>
       <InfoBanner title={collection_title} preview={collection_preview}>
