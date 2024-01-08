@@ -1,5 +1,4 @@
 import { Box, Heading, Stack } from "@chakra-ui/react";
-import { images } from "./_data";
 import { images2 } from "./_data2";
 import { Gallery } from "./Gallery";
 

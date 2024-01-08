@@ -18,6 +18,7 @@ import {
     hideLabel?: boolean
     options: Array<{ label: string; value: string; count?: number }>
     label?: string
+    // eslint-disable-next-line no-unused-vars
     onChange?: (value: string[]) => void
     spacing?: StackProps['spacing']
     showSearch?: boolean

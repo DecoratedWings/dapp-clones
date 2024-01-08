@@ -25,11 +25,11 @@ export const MainFilter = () => {
           <ColorPicker {...colorFilter} label="Color" />
           <CheckboxFilter spacing="3" options={blueFilters.options} label="Publisher" showSearch colorScheme={colorMode === "dark" ? "white" : "black"}/>
           <Stack spacing="5">
-            <label><b>Price range</b></label>
+            <label htmlFor={"price-slider"}><b>Price range</b></label>
             <PriceRangePicker defaultValue={[6, 40]} />
             <HStack spacing="6">
-              <Input type="number" placeholder="$20" aria-label='minimum price'/>
-              <Input type="number" placeholder="$100" aria-label='maximum price'/>
+              <Input id={"price-slider"} type="number" placeholder="$20" aria-label='minimum price'/>
+              <Input id={"price-slider"} type="number" placeholder="$100" aria-label='maximum price'/>
             </HStack>
           </Stack>
         </Stack>

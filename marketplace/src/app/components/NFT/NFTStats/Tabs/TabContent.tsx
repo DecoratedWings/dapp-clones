@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Image, Text, VStack, HStack, Grid, useColorMode } from '@chakra-ui/react';
+import { Image, Text, VStack, HStack, Grid, useColorMode } from '@chakra-ui/react';
 
 const TabContent = ({ collections }: any) => {
     const { colorMode } = useColorMode();

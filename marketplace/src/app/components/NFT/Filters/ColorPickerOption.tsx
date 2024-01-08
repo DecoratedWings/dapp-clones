@@ -5,7 +5,6 @@ import {
     useColorModeValue,
     useRadio,
     UseRadioProps,
-    useTheme,
     VisuallyHidden,
   } from '@chakra-ui/react'
   import { FiCheck } from 'react-icons/fi'
@@ -17,7 +16,6 @@ import {
   export const ColorPickerOption = (props: ColorPickerOptionProps) => {
     const { color, value } = props
     const { getInputProps, htmlProps, getCheckboxProps, getLabelProps, state } = useRadio(props)
-    const theme = useTheme()
   
     return (
       <chakra.label cursor="pointer" {...htmlProps}>
@@ -33,6 +31,7 @@ import {
         >
           <Circle size="8" bg={color}>
             {state.isChecked && (
+              // eslint-disable-next-line react-hooks/rules-of-hooks
               <Icon as={FiCheck} color={useColorModeValue('white' , 'gray.900')} />
             )}
           </Circle>

@@ -5,6 +5,7 @@ interface AppPaginationProps {
   totalPosts: number;
   currentPage: number;
   postsPerPage: number;
+  // eslint-disable-next-line no-unused-vars
   onPageChange: (page: number) => void;
 }
 

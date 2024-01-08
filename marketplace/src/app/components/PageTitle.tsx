@@ -5,7 +5,6 @@ import {
     Heading,
     Stack,
     useBreakpointValue,
-    Text,
     useColorMode,
   } from "@chakra-ui/react";
   

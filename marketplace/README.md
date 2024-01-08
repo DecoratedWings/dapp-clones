@@ -59,4 +59,5 @@ To run the jest tests with checks against axe-core:
 
 ### Deployed Application
 
+This application is deployed at: https://a11y-marketplace.netlify.app/
 

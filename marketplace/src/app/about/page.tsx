@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Heading, Text, VStack, Image, Center, Link, List, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Container, Heading, Text, VStack, Image, Center, Link, ListItem, UnorderedList } from '@chakra-ui/react';
 
 const AboutPage = () => {
   return (
