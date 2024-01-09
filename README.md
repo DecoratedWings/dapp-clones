@@ -43,6 +43,13 @@ There are some accessibility enhancements that are generalizable to all dapp cat
 
 - **Help For User**: There should be some means to contact your team or ask for help, whether it be a link to a forum, a contact form, or otherwise. We've elected to include a contact us section. [3.3.5]
 
+## Navigating This Repo
+
+1. [Exchange (DEX)](https://github.com/DecoratedWings/dapp-clones/tree/main/dex)
+2. [Marketplace](https://github.com/DecoratedWings/dapp-clones/tree/main/marketplace)
+3. [Staking Application](https://github.com/DecoratedWings/dapp-clones/tree/main/stakedapp)
+
+
 ## Relevant WCAG 2.2 References
 
 - [WCAG 2.2 Main](https://www.w3.org/TR/WCAG22/)
