@@ -1,6 +1,6 @@
 # dapp-clones
 
-Welcome to "dapp-clones", where we explore into the world of decentralized applications (Dapps) and their user experience (UX) design. Our team set out to determine the state of web3 accessibility, as part of pro bono work through our grant from the Ethereum Foundation's Ecosystem Support program.
+Welcome to "dapp-clones", where we explore into the world of decentralized applications (Dapps) and their user experience (UX) design. Our team set out to determine the state of web3 accessibility, as part of pro bono work through our grant from the school **Ethereum Foundation's Ecosystem Support program**.
 
 This sample repository outlines general better practices in Dapp design, ensuring they are not only functional but also accessible to a broader audience, including those with disabilities. From color contrast to navigation, we explore essential design considerations, backed by relevant WCAG 2.2 references, to help you build more inclusive and user-friendly DApps.
 
