@@ -10,9 +10,6 @@ This sample repository outlines general better practices in Dapp design, ensurin
 
 ## Categorizing Dapps
 
-<div align="center"> 
-    <img src="./assets/piece.png" width="700" height="400" alt="This is a simple and playful illustration of a stick figure with a square head popping up from a laptop screen. The character has a smile and one arm placing a missing puzzle piece with an accessibility symbol on it. On the laptop screen, there are three puzzle pieces that are connecting together, symbolizing problem-solving or the completion of a task. Accessibility is the missing piece needed to build good applications"/>
-</div>
 In the blockchain space, we have decentralized applications, also knowns as "dapps" for short. These can be decentralized exchanges (dex), NFT marketplaces, staking applications, and so forth. The idea is that dapps tend to gravitate towards categories based on their intended use and functionality. Grouping tendencies into a broader category, allows us to make suggestions for broader types from an accessibility perspective.
 
 For example, a decentralized exchange, features a form and dropdowns as the main piece in its design. That input field should be labeled for the tokens, and the dropdowns should be accessible for keyboard users. NFT markeplaces, as another example, feature carousels. There should be considerations for alternatives, but at a minmum the carousels should ideally be static (not move unless right or left selection).
@@ -20,6 +17,10 @@ For example, a decentralized exchange, features a form and dropdowns as the main
 Each category has its own pieces that can be improved from existing best standards and practices. This repository contains three such categories: exchange (dex), marketplace, and staking dapps. Navigate to each folder to view specific accessibilty recommendations and design, which was formulated from WCAG references and our research study.
 
 | Please note, that the code is currently unaudited. Furthermore, user testing is imperative to fully insure full accessibilty. Our testing suites pass, yet any automated tests can only capture 30% of all errors.|
+
+<div align="center"> 
+    <img src="./assets/piece.png" width="700" height="400" alt="This is a simple and playful illustration of a stick figure with a square head popping up from a laptop screen. The character has a smile and one arm placing a missing puzzle piece with an accessibility symbol on it. On the laptop screen, there are three puzzle pieces that are connecting together, symbolizing problem-solving or the completion of a task. Accessibility is the missing piece needed to build good applications"/>
+</div>
 
 ## General Better Practices
 
