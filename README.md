@@ -19,12 +19,11 @@ For example, a decentralized exchange, features a form and dropdowns as the main
 
 Each category has its own pieces that can be improved from existing best standards and practices. This repository contains three such categories: exchange (dex), marketplace, and staking dapps. Navigate to each folder to view specific accessibilty recommendations and design, which was formulated from WCAG references and our research study.
 
-| Please note, that the code is currently unaudited. Furthermore, user testing is imperative to fully insure full accessibilty. Our testing suites pass, yet tests only capture 30% of all errors.|
+| Please note, that the code is currently unaudited. Furthermore, user testing is imperative to fully insure full accessibilty. Our testing suites pass, yet any automated tests can only capture 30% of all errors.|
 
 ## General Better Practices
 
-There are some accessibility enhancements that are generalizable to all dapp categories. This is a list of _some_ considerations. We chose to highlight some more common issues we've noticed from the dapp ecosystem. Associated with each
-point is the corresponding WCAG 2.2 guideline references that most closely relates to it. For a more detailed list with dapp focused examples, please reference our better practices guide which will be released soon.
+There are some accessibility enhancements that are generalizable to all dapp categories. This is a list of _some_ considerations. We chose to highlight some of the more common issues we've noticed from the dapp ecosystem. Associated with each point is the corresponding WCAG 2.2 guideline references that most closely relates to it. For a more detailed list with dapp focused examples, please reference our better practices guide which will be released soon.
 
 - **Headings**: Many dapps unfortunately do not follow the proper heading hierarchy. Headings are akin to roadmaps for screenreaders and must maintain the appropriate hierarchy order.[2.4.6]
 
