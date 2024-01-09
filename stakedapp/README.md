@@ -82,7 +82,7 @@ References:
 
 
 ### Deployed Application
-This application is deployed at: a11y-stakedapp.netlify.app
+This application is deployed at: https://a11y-stakedapp.netlify.app
 
 We have attached a wallet for testnet transactions on ethereum sepolia. 
 There is a custom, unaudited staking smart contract designed for basic staking functionality. This code is solely intended to aid in the simulation of a staking dapp. 
