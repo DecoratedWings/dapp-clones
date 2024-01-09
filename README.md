@@ -70,15 +70,15 @@ There are some accessibility enhancements that are generalizable to all dapp cat
 
 ## Accessibility is a journey
 
-<div align="center"> 
-    <img src="./assets/goal.png" width="700" height="400" alt="A square character is unblocking a barrier that obstructs a green pathway leading to an accessibility symbol. Along the pathway, there are three-dimensional blocks or cubes piled up to form structures, some with ethereum, crystal-like shapes are on top to symbolize a blockchain. The image metaphorically represents overcoming obstacles and building towards a more accessible and inclusive goal."/>
-</div>
-
 Accessibility is an ongoing process. Teams must continue to test and review code and processes. If any issues are encountered in this repository, kindly raise an issue or contact our team!
 
 As developers, researchers, engineers, and so forth we must remember that accessibility is a journey. It continues to evolve as our products evolve and requires constant feedback. Assumptions made today can easily be broken tomorrow, however "shifting left" is worth it. Coding with human-centric and inclusive design is worth it.
 
 Let's all make the next generation of the web a more accessible place!
+
+<div align="center"> 
+    <img src="./assets/goal.png" width="700" height="400" alt="A square character is unblocking a barrier that obstructs a green pathway leading to an accessibility symbol. Along the pathway, there are three-dimensional blocks or cubes piled up to form structures, some with ethereum, crystal-like shapes are on top to symbolize a blockchain. The image metaphorically represents overcoming obstacles and building towards a more accessible and inclusive goal."/>
+</div>
 
 ### Graphics Attribution
 
